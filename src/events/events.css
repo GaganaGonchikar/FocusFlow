@@ -1,0 +1,137 @@
+ .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+ 
+.logo {
+  width: 200px;
+  height: 130px;
+  margin: 0px auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.boschlogo {
+  width: 130px;
+  height: 130px;
+  margin: 0px auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+.border {
+  width: 20%;
+  height: 40px;
+  margin: 0px auto;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left:0px; 
+}
+.people {
+  width: 150px;
+  height: 210px;
+  margin: 0px auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 700px;
+  
+  
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.form-wrapper {
+  width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 0 30px rgb(145, 108, 212), 0 0 0 300px #fff; 
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
+.label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+button[type="submit"] {
+  background-color: rgb(119, 76, 198);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #512b8d;
+}
