@@ -26,7 +26,7 @@ const AddEvents = () => {
         e.preventDefault();
         console.log(eventInfo)
     
-        const url = "http://localhost:8000/product/" + eventInfo['Admin'] 
+        const url = "http://localhost:8000/event/" + eventInfo['Admin'] 
 
         const response = await fetch(
             url, {
@@ -51,7 +51,7 @@ const AddEvents = () => {
             if (response.status === 'ok') {
                 alert("Event added successfully")
             } else {
-                alert("Failed to add product")
+                alert("Failed to add event")
             }
         });
         setEventInfo({

@@ -15,7 +15,7 @@ const UpdateEvent = () => {
     const postData = async (e: { preventDefault: () => void }) => {
         e.preventDefault()
 
-        const url = "http://localhost:8000/product/" + updateEventInfo['EventId']
+        const url = "http://localhost:8000/event/" + updateEventInfo['EventId']
 
         const response = await fetch(url, {
             method: "PUT",
@@ -36,10 +36,10 @@ const UpdateEvent = () => {
 
         response.json().then(resp => {
             if (resp.status === 'ok') {
-                alert("Product updated");
+                alert("Event updated");
             }
             else {
-                alert("Failed to update product")
+                alert("Failed to update event")
             }
         })
 
@@ -72,10 +72,10 @@ const UpdateEvent = () => {
 						<Form.Label>No of Registered Users</Form.Label>
 						<Form.Control
 							type='number'
-							name='QNo-of_registered_users'
-							value={updateEventInfo.QuantityInStock}
+							name='No_of_registered_users'
+							value={updateEventInfo.No_of_registered_users}
 							onChange={updateForm}
-							placeholder='Quantity In Stock'
+							placeholder='No. of Registered Users'
 						/>
 					</Form.Group>
 
@@ -84,9 +84,9 @@ const UpdateEvent = () => {
 						<Form.Control
 							type='number'
 							name='Attendees'
-							value={updateEventInfo.QuantitySold}
+							value={updateEventInfo.Attendees}
 							onChange={updateForm}
-							placeholder='Quantity Sold'
+							placeholder='Attendees'
 						/>
 					</Form.Group>
 
@@ -95,7 +95,7 @@ const UpdateEvent = () => {
 						<Form.Control
 							type='number'
 							name='Date'
-							value={updateEventInfo.UnitPrice}
+							value={updateEventInfo.Date}
 							onChange={updateForm}
 							placeholder='Date'
 						/>
@@ -106,7 +106,7 @@ const UpdateEvent = () => {
 						<Form.Control
 							type='number'
 							name='Time'
-							value={updateEventInfo.Revenue}
+							value={updateEventInfo.Time}
 							onChange={updateForm}
 							placeholder='Time'
 						/>

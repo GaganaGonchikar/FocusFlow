@@ -1,7 +1,7 @@
 import react, { useState, useContext, createContext } from 'react'
 
 
-export const EventContext = createContext<any>(null);
+export const AdminContext = createContext<any>(null);
 
 export function AdminContextProvider(props: { children: string | number | boolean | react.ReactElement<any, string | react.JSXElementConstructor<any>> | react.ReactFragment | react.ReactPortal | null | undefined; }): JSX.Element {
     const [adminDetail, setAdminDetail] = useState({

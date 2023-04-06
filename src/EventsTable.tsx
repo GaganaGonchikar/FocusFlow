@@ -14,7 +14,7 @@ const ProductsTable = () => {
     let history = useHistory()
 
     const handleDelete = (id: string) => {
-        fetch("http://127.0.0.1:8000/product/" + id, {
+        fetch("http://127.0.0.1:8000/event/" + id, {
             method: "DELETE",
             headers: {
                 accept: 'application/json'
@@ -25,8 +25,8 @@ const ProductsTable = () => {
             })
             .then(result => {
                 if (result.status === 'ok') {
-                    const filteredProducts = events.data.filter((event: { id: any }) => event.id !== id);
-                    setEvents({ data: [...filteredProducts] })
+                    const filteredEvents = events.data.filter((event: { id: any }) => event.id !== id);
+                    setEvents({ data: [...filteredEvents] })
                     alert("Event deleted")
                 } else {
                     alert("Event deletion failed")
@@ -49,7 +49,7 @@ const ProductsTable = () => {
 
     const handleAdmin = (id: string) => {
         console.log(id)
-        fetch("http://localhost:8000/supplier/" + id, {
+        fetch("http://localhost:8000/admin/" + id, {
             headers: {
                 Accept: 'application/json'
             }

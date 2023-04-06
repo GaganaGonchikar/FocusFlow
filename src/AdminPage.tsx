@@ -9,11 +9,11 @@ const SupplierPage = () => {
 		setAdminDetail({ ...adminDetail, [e.target.name]: e.target.value });
 	};
 
-	// website to obtain fetch from curl: https://kigiri.github.io/fetch/
+	
 	const handelAdd = async (e: { preventDefault: () => void; }) => {
 		e.preventDefault();
 
-		const url = 'http://localhost:8000/supplier';
+		const url = 'http://localhost:8000/admin';
 
 		const response = await fetch(url, {
 			method: 'POST',
@@ -37,7 +37,7 @@ const SupplierPage = () => {
 			if (response.status === 'ok') {
 				alert('Admin added successfully');
 			} else {
-				alert('Failed to add Supplier');
+				alert('Failed to add Admin');
 			}
 		});
 		setAdminDetail({
@@ -53,7 +53,7 @@ const SupplierPage = () => {
 	const handleUpdate = async (e: { preventDefault: () => void; }) => {
 		e.preventDefault();
 
-		const url = 'http://localhost:8000/supplier/' + adminDetail['id'];
+		const url = 'http://localhost:8000/admin/' + adminDetail['id'];
 
 		const response = await fetch(url, {
 			method: 'PUT',
@@ -83,7 +83,7 @@ const SupplierPage = () => {
 	};
 
 	const handleDelete = () => {
-		fetch('http://127.0.0.1:8000/supplier/' + adminDetail['id'], {
+		fetch('http://127.0.0.1:8000/admin/' + adminDetail['id'], {
 			method: 'DELETE',
 			headers: {
 				accept: 'application/json'
@@ -161,7 +161,7 @@ const SupplierPage = () => {
 							name='name'
 							value={adminDetail.name}
 							onChange={updateForm}
-							placeholder='supplier&#39;s Name'
+							placeholder='admin&#39;s Name'
 						/>
 					</Form.Group>
 
