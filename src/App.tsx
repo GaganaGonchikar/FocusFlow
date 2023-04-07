@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// // import UserListScreen from './UserListScreen';
+// // import EventListScreen from './EventListScreen'
+// // import ManageEventsScreen from './ManageEventsScreen'
 
-function App() {
+// import ManageEventsScreen from './ManageEventsScreen'
+// const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       {/* <UserListScreen /> */}
+//       <ManageEventsScreen/>
+//       {/* <EventListScreen/> */}
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+
+// import './App.css';
+
+// import { AddEventForm } from './AddEventsForm';
+
+// function App() {
+
+// return (
+
+//  <AddEventForm/>
+
+// );
+
+// }
+
+// export default App;
+
+
+
+import React from 'react';
+// import UserListScreen from './UserListScreen';
+// import EventListScreen from './EventListScreen'
+// import ManageEventsScreen from './ManageEventsScreen'
+
+import AdminDashboard from './AdminDashboard'
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <UserListScreen /> */}
+      <AdminDashboard/>
+      {/* <EventListScreen/> */}
     </div>
   );
-}
+};
 
 export default App;

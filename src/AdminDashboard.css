@@ -1,0 +1,39 @@
+.admin-dashboard {
+    font-size: 2rem;
+    color: '#6b3e9e';
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #eee;
+  }

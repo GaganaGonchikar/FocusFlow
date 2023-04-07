@@ -1,0 +1,7 @@
+SERVER = 'focusflowserver.database.windows.net'
+#DATABASE = 'Gagana_Test'
+# DATABASE = 'testDB'
+DATABASE = 'focusFlowDb'
+UID = 'isuh1kor'
+DRIVER = '{ODBC Driver 17 for SQL Server}'
+TRUST = 'yes'
