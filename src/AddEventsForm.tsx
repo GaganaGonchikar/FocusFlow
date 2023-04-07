@@ -1,6 +1,6 @@
 import React from "react";
 
-// import './events.css';
+// import './AddEventsForm.css';
 // import logo from './logo1.svg';
 // import boschlogo from './boschlogo.svg';
 // import people from './people.svg';

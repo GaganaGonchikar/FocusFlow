@@ -4,8 +4,8 @@ import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import './ManageEventScreen.css';
-import focusFlow from "./logo_adobe_express.svg";
-import boschlogo from "./boschlogo.png";
+// import focusFlow from "./focuflow.svg";
+// import boschlogo from "./boschlogo.png";
 
 
 type EventDetails = {
@@ -83,9 +83,9 @@ const EventDetailsTable = () => {
   return (
     <div className="container">
       <div className="logo-container">
-      <img src={boschlogo} alt="Bosch logo" className="logo" />
-      <h1 className="title">MANAGE EVENTS</h1>
-      <img src={focusFlow} alt="Focus Flow logo" className="logo" />
+      {/* <img src={boschlogo} alt="Bosch logo" className="logo" /> */}
+      <h2 className="title1">MANAGE EVENTS</h2>
+      {/* <img src={focusFlow} alt="Focus Flow logo" className="logo1" /> */}
       </div>
       <div className="search-form">
         <label htmlFor="search-input">Search:</label>
