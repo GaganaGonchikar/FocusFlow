@@ -4,11 +4,14 @@ import pyodbc
 import uvicorn
 import config
 import py_functions
+import logging
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+logging.basicConfig(filename='app.log', level=logging.INFO)
 
 # Define CORS middleware
 origins = [ 
@@ -42,57 +45,77 @@ def connect_db(pwd):
 pwd = 'suhas@123'
 cnxn = connect_db(pwd)
 
-#FOR USER SCREENS
+# Define endpoints
 @app.get('/user-data/')
 def get_user_data():
-    df = py_functions.fetch_userdata(cnxn)
-    return df.to_dict('r')
+    try:
+        df = py_functions.fetch_userdata(cnxn)
+        logging.info('User data fetched successfully')
+        return df.to_dict('r')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.put('/update-user-details/{NTID}')
 def update_user_details(NTID: str, first_name: str, last_name: str, email: str, phone: str, location: str, approved: bool):
     try:
         py_functions.update_user_details(cnxn, NTID, first_name, last_name, email, phone, location, approved)
-    except:
-        raise HTTPException(status_code=404, detail='Could not update user details in the database')
+        logging.info(f'User details updated for {NTID}')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Could not update user details in the database")
     return {'message': 'User details updated successfully'}
 
 @app.delete('/delete-user/{NTID}')
 def delete_event(NTID: str):
     try:
         py_functions.delete_user(cnxn, NTID)
-    except:
-        raise HTTPException(status_code=404, detail='Could not delete user from the database')
+        logging.info(f'User {NTID} deleted successfully')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Could not delete user details in the database")
     return {'message': 'User deleted successfully'}
 
-#FOR EVENT SCREEN
 @app.get('/event-data/')
 def get_event_data():
-    df = py_functions.fetch_eventdata(cnxn)
-    return df.to_dict('r')
+    try:
+        df = py_functions.fetch_eventdata(cnxn)
+        logging.info('Event data fetched successfully')
+        return df.to_dict('r')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 @app.put('/update-event-details/{event_id}')
 def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
     try:
         py_functions.update_event_details(cnxn, event_id, event_name, event_location, event_description, event_date)
-    except:
-        raise HTTPException(status_code=404, detail='Could not update event details in the database')
+        logging.info(f'Event details updated for event {event_id}')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Could not update event details in the database")
     return {'message': 'Event details updated successfully'}
 
 @app.delete('/delete-event/{event_id}')
 def delete_event(event_id: str):
     try:
         py_functions.delete_event(cnxn, event_id)
-    except:
-        raise HTTPException(status_code=404, detail='Could not delete event from the database')
+        logging.info(f'Event {event_id} deleted successfully')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Could not delete event details in the database")
     return {'message': 'Event deleted successfully'}
 
 @app.post('/add-event/')
 def add_event_endpoint(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
     try:
         py_functions.add_event(cnxn, event_id, event_name, event_location, event_description, event_date)
-    except:
-        raise HTTPException(status_code=404, detail='Could not add event in the database')
+        logging.info(f'Event {event_id} added successfully')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Can't add event in the database")
     return {'message': 'Event added successfully'}
+
 
 # Run the app
 if __name__ == "__main__":
