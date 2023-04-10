@@ -7,11 +7,21 @@ import py_functions
 import logging
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
+import configparser
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-logging.basicConfig(filename='app.log', level=logging.INFO)
+
+app.log = 'C:/Users/ZZY1KOR/src/FocusFlowPersonnel/New trial/app.log'
+
+# Define logging settings
+logging.basicConfig(
+    filename=app.log, 
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s'
+)
+#logging.basicConfig(filename='app.log', level=logging.INFO)
 
 # Define CORS middleware
 origins = [ 
@@ -42,7 +52,7 @@ def connect_db(pwd):
     print('Connection succesful with database')
     return cnxn
 
-pwd = 'suhas@123'
+pwd = 'shreshta@123'
 cnxn = connect_db(pwd)
 
 # Define endpoints
