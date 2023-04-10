@@ -5,7 +5,10 @@ import EventDetailsTable from './components/EventDetailsTable';
 const App: React.FC = () => {
   return (
     <div>
+
       <UserDetailsTable/>
+
+
     </div>
   );
 }
