@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import "bootstrap/dist/css/bootstrap.css"
+import EventDetails from './components/EventDetails'; // Import the EventDetails component
 
+// Render the EventDetails component in the root div
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EventDetails />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
-reportWebVitals()

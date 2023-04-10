@@ -1,0 +1,8 @@
+.event-row:hover .event-details {
+    display: table-row; /* Show hidden row on hover */
+  }
+  
+  .event-details {
+    display: none; /* Hide row by default */
+  }
+  
