@@ -9,6 +9,10 @@ from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
 import configparser
 from fastapi.middleware.cors import CORSMiddleware
+import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 app = FastAPI()
 
@@ -52,7 +56,7 @@ def connect_db(pwd):
     print('Connection succesful with database')
     return cnxn
 
-pwd = 'shreshta@123'
+pwd = 'suhas@123'
 cnxn = connect_db(pwd)
 
 # Define endpoints
@@ -125,6 +129,7 @@ def add_event_endpoint(event_id: str, event_name: str, event_location: str, even
         logging.error(str(e))
         raise HTTPException(status_code=404, detail="Can't add event in the database")
     return {'message': 'Event added successfully'}
+
 
 
 # Run the app

@@ -1,5 +1,5 @@
 # config.py
-''''
+
 SERVER = 'focusflowserver.database.windows.net,1433'
 DATABASE = 'focusFlowDb'
 UID = 'isuh1kor'
@@ -12,5 +12,5 @@ DATABASE = 'PersonalFocusFlow'
 UID = 'PersonalDatabase'
 DRIVER = '{ODBC Driver 17 for SQL Server}'
 TRUST = 'yes'
-
+'''
 

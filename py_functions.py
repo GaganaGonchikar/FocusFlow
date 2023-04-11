@@ -2,20 +2,20 @@ import pandas as pd
 
 #FOR USER SCREEN
 def fetch_userdata(engine):
-    query = 'SELECT * FROM Users'
+    query = 'SELECT * FROM signups'
     print(query)
     df = pd.read_sql(query, engine)
     return df
 
 def update_user_details(engine, NTID, first_name, last_name, email, phone, location, approved):
-    query = f"UPDATE Users SET first_name = '{first_name}', last_name = '{last_name}', email = '{email}', phone = '{phone}', location = '{location}', approved = '{approved}' WHERE NTID = '{NTID}'"
+    query = f"UPDATE signups SET first_name = '{first_name}', last_name = '{last_name}', email = '{email}', phone = '{phone}', location = '{location}', approved = '{approved}' WHERE NTID = '{NTID}'"
     print(query)
     #engine.execute(query)
     engine.execute(query)
     engine.commit()
 
 def delete_user(engine, NTID):
-    query = f"DELETE FROM Users WHERE NTID = '{NTID}'"
+    query = f"DELETE FROM signups WHERE NTID = '{NTID}'"
     print(query)
     engine.execute(query)
     engine.commit()    
