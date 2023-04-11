@@ -1,139 +1,76 @@
 .wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-  }
-   
-  .logo {
-    width: 200px;
-    height: 130px;
-    margin: 0px auto;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 20px;
-   
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+    margin-top: 50px;
   }
   
-  /* .boschlogo {
-    width: 130px;
-    height: 130px;
-    margin: 0px auto;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50px;
-  } */
-  .border {
-    width: 20%;
-    height: 40px;
-    margin: 0px auto;
-    display: block;
-    position: absolute;
-    top: 0px;
-    left:0px;
-  }
-  .people {
-    width: 150px;
-    height: 210px;
-    margin: 0px auto;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 700px;
-   
-   
-  }
-  @keyframes scale {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
   .form-wrapper {
-    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
     background-color: #fff;
+    border-radius: 10px;
     padding: 30px;
-    border-radius: 30px;
-    box-shadow: 0 0 0 30px rgb(145, 108, 212), 0 0 0 300px #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   }
   
-  h2 {
+  h4 {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 30px;
     margin-bottom: 20px;
+    text-align: center;
+    color: #090909;
   }
   
   form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .label-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-  }
-  
-  .label {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  textarea {
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
     width: 100%;
   }
   
-  textarea {
-    height: 100px;
-    resize: none;
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
   
-  .submit {
-    display: flex;
-    margin-top: 10px;
-    justify-content: flex-end;
+  input,
+  textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 1rem;
   }
   
   button[type="submit"] {
-    background-color: rgb(119, 76, 198);
+    background-color: #4caf50;
     color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-   
-    transition: background-color 0.3s ease-in-out;
+    font-size: 1.2rem;
   }
   
   button[type="submit"]:hover {
-    background-color: #512b8d;
+    background-color: #3e8e41;
   }
   
+  .form-wrapper {
+    background-color: #f1f1f1;
+    /* height: 80vh;
+    width: 50vw; */
+    display: flex;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;  */
+      
+      @media (max-width: 768px) {
+        padding: 20px;
+      }
+    }
   

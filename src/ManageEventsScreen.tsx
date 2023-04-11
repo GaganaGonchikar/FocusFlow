@@ -22,7 +22,7 @@ const EventDetailsTable = () => {
   const [editingEnabled, setEditingEnabled] = useState(false);
 
   useEffect(() => {
-    axios.get<EventDetails[]>('http://127.0.0.1:8000/').then((response) => {
+    axios.get<EventDetails[]>('http://127.0.0.1:8000/event-data/').then((response) => {
       setEventDetails(response.data);
     });
   }, []);
