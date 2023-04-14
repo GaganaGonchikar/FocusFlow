@@ -99,6 +99,7 @@ def get_event_data():
     except Exception as e:
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
+    
 
 @app.put('/update-event-details/{event_id}')
 def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
@@ -109,6 +110,7 @@ def update_event_details(event_id: str, event_name: str, event_location: str, ev
         logging.error(str(e))
         raise HTTPException(status_code=404, detail="Could not update event details in the database")
     return {'message': 'Event details updated successfully'}
+
 
 @app.delete('/delete-event/{event_id}')
 def delete_event(event_id: str):
@@ -129,6 +131,31 @@ def add_event_endpoint(event_id: str, event_name: str, event_location: str, even
         logging.error(str(e))
         raise HTTPException(status_code=404, detail="Can't add event in the database")
     return {'message': 'Event added successfully'}
+
+
+@app.post('/register-event')
+def register_event(event_id: str, NTID: str):
+    try:
+        signups_df = py_functions.fetch_userdata(cnxn)
+        user = signups_df[signups_df['NTID'].str.lower() == NTID.lower()]
+        if user.empty:
+            raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found in signups")
+        events_df = py_functions.fetch_eventdata(cnxn)
+        event = events_df[events_df['event_id'] == event_id]
+        if event.empty:
+            raise HTTPException(status_code=404, detail=f"Event with event id {event_id} not found in events")
+        if py_functions.is_registered_for_event(cnxn, event_id, NTID.lower()):
+            raise HTTPException(status_code=400, detail="User is already registered for this event")
+        py_functions.register_user_for_event(cnxn, event_id, NTID.lower())
+        logging.info(f'User {NTID} registered for event {event_id}')
+        return {'message': 'User registered for event successfully'}
+    except HTTPException as he:
+        logging.error(str(he))
+        raise he
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
 
 
 

@@ -44,3 +44,19 @@ def add_event(engine, event_id, event_name, event_location, event_description, e
     print(query)
     engine.execute(query)
     engine.commit()
+
+#for user registeration
+def is_registered_for_event(cnxn, event_id, NTID):
+    cursor = cnxn.cursor()
+    query = f"SELECT COUNT(*) FROM EventRegistration WHERE event_id = {event_id} AND NTID = '{NTID}';"
+    cursor.execute(query)
+    count = cursor.fetchone()[0]
+    cursor.close()
+    return count > 0
+
+def register_user_for_event(cnxn, event_id, NTID):
+    cursor = cnxn.cursor()
+    query = f"INSERT INTO EventRegistration (NTID, event_id) VALUES ('{NTID}', {event_id});"
+    cursor.execute(query)
+    cnxn.commit()
+    cursor.close()

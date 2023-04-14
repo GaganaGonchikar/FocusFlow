@@ -6,6 +6,7 @@ UID = 'isuh1kor'
 DRIVER = '{ODBC Driver 17 for SQL Server}'
 TRUST = 'yes'
 
+
 '''
 SERVER = 'personalfocusflow.database.windows.net'
 DATABASE = 'PersonalFocusFlow'
@@ -13,4 +14,3 @@ UID = 'PersonalDatabase'
 DRIVER = '{ODBC Driver 17 for SQL Server}'
 TRUST = 'yes'
 '''
-
