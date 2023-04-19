@@ -1,15 +1,15 @@
 
-import React from 'react';
-import AdminDashboard from './AdminDashboard'
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <AdminDashboard/>
-    </div>
-  );
-};
+// import React from 'react';
+// import AdminDashboard from './AdminDashboard'
+// const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       <AdminDashboard/>
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
 
 // import React from 'react';
 // import UserRegistration from './Users/UserRegistration'
@@ -81,31 +81,31 @@ export default App;
 
 // export default App;
 
-// import React from 'react';
-// import { Route, Link } from 'wouter';
-// // import AdminDashboard from './AdminDashboard';
-// import LoginForm from './Users/loginform';
-// import SignUpForm from './Users/signup'; // Assuming you have a SignUpForm component for the sign up page
-//  // Assuming you have a LoginForm component for the login page
-//  const App: React.FC = () => {
-//   return (
-//     <div className="App">
-//       <nav>
-//         <ul>
+import React from 'react';
+import { Route, Link } from 'wouter';
+// import AdminDashboard from './AdminDashboard';
+import LoginForm from './Users/loginform';
+import SignUpForm from './Users/signup'; // Assuming you have a SignUpForm component for the sign up page
+ // Assuming you have a LoginForm component for the login page
+ const App: React.FC = () => {
+  return (
+    <div className="App">
+      <nav>
+        <ul>
           
-//           <li>
-//             <Link to="/signup">Sign up</Link>
-//           </li>
-//           <li>
-//             <Link to="/login">Login</Link>
-//           </li>
-//         </ul>
-//       </nav>
+          <li>
+            <Link to="/signup">Sign up</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </ul>
+      </nav>
       
-//       <Route path="/signup" component={SignUpForm} />
-//       <Route path="/login" component={LoginForm} /> {/* Add this line for the Sign up route */}
-//     </div>
-//   );
-// };
+      <Route path="/signup" component={SignUpForm} />
+      <Route path="/login" component={LoginForm} /> {/* Add this line for the Sign up route */}
+    </div>
+  );
+};
 
-// export default App;
+export default App;
