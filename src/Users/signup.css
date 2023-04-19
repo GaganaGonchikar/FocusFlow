@@ -1,0 +1,151 @@
+p, div {
+    font-family: Helvetica;
+  }
+   
+  .wrapper {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-weight:bold;
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 200px;
+    align-items: center;
+    background-image: url("https://www.bosch-softwaretechnologies.com/media/images/company/about/311221_bgsw_digital_banners-11_new_res_1984x1116.jpg "); /* added logo */
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: rgb(119, 76, 198);
+    
+    
+    /* background-color: rgb(119, 76, 198); */
+  }
+   
+  .form-wrapper {
+    width: 300px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 30px rgb(145, 108, 212), 0 0 0 150px #fff;
+  }
+   
+  .form-wrapper > h2 {
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 0.015em;
+    color: #222;
+  }
+   
+  form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+   
+  label {
+    margin-bottom: 0.5em;
+    color: #444;
+    font-weight: lighter;
+  }
+   
+  input {
+    font-size: 16px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1.1px solid #ccc;
+    width: 17.5rem;
+  }
+  
+  
+   
+  input::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #bbb;
+  }
+   
+  select {
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #d6d1d5;
+  }
+   
+  select::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #bbb;
+  }
+   
+  button {
+    min-width: 50%;
+    cursor: pointer;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    padding: 0.938em;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(119, 76, 198);
+    color: #fefefe;
+  }
+   
+  button[type="submit"]:hover {
+    background-color: #512b8d;
+  }
+   
+  .NTID,
+  .first_name,
+  .last_name,
+  .email,
+  .phone,
+  .location {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+   
+  .submit {
+   
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 73px;
+  }
+  
+  .logo-container3 {
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  .Blogo {
+    height: 95px;
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .Flogo {
+    height: 90px;
+    
+    margin-right: 10px; /* Update margin as needed */
+    position: absolute;
+    top: 0;
+    right: 0; /* Update to right instead of left */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

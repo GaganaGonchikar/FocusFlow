@@ -1,0 +1,110 @@
+p, div {
+    font-family: Helvetica;
+  }
+  
+  .wrapper1 {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-weight:bold;
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 200px;
+    align-items: center;
+    background-image: url("https://www.bosch-softwaretechnologies.com/media/images/company/about/311221_bgsw_digital_banners-11_new_res_1984x1116.jpg "); /* added logo */
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: rgb(119, 76, 198);
+  }
+  
+  .form-wrapper1 {
+    width: 300px;
+    height:300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 0 10px rgb(145, 108, 212), 0 0 0 200px #fff; 
+  }
+  
+  .form-wrapper > h2 {
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 0.015em;
+    color: #222;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    color: #444;
+    font-weight: lighter;
+  }
+  
+  input {
+    font-size: 16px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1.1px solid #ccc;
+    width: 17.5rem;
+  }
+  
+  input::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #bbb;
+  }
+  
+  select {
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #d6d1d5;
+  }
+  
+  select::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #bbb;
+  }
+  
+  button {
+    min-width: 100%;
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.938em;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: rgb(119, 76, 198);
+    color: #fefefe;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #512b8d;
+  }
+  
+  .NTID,
+  .password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .submit {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 90px;
+  }

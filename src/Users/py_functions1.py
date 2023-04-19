@@ -16,6 +16,7 @@ def check_credentials(cnxn, username, password):
     params = (username, password)
     cursor.execute(query, params)
     row = cursor.fetchone()
+    cnxn.commit()
     cursor.close()
     return row
 
@@ -64,20 +65,38 @@ def add_event(engine, event_id, event_name, event_location, event_description, e
     engine.execute(query)
     engine.commit()
 
-# def fetch_user_by_ntid(engine, NTID):
-#     query = f"SELECT * FROM signups WHERE NTID = '{NTID}'"
-#     print(query)
-#     df = pd.read_sql(query, engine)
-#     return df
 
-# def fetch_event_by_id(engine, event_id):
-#     query = f"SELECT * FROM Events WHERE event_id = '{event_id}'"
-#     print(query)
-#     df = pd.read_sql(query, engine)
-#     return df
+# Fetch user details by NTID
+def fetch_user_by_ntid(cnxn, NTID):
+    cursor = cnxn.cursor()
+    query = f"SELECT * FROM signups WHERE NTID = '{NTID}';"
+    cursor.execute(query)
+    row = cursor.fetchone()
+    cursor.close()
+    return row
 
-# def register_user_for_event(engine, NTID, event_id):
-#     query = f"INSERT INTO EventRegistration (event_id, NTID) VALUES ('{NTID}', '{event_id}')"
-#     print(query)
-#     engine.execute(query)
-#     engine.commit()
+# Fetch event details by ID
+def fetch_event_by_id(cnxn, event_id):
+    cursor = cnxn.cursor()
+    query = f"SELECT * FROM Events WHERE event_id = {event_id};"
+    cursor.execute(query)
+    row = cursor.fetchone()
+    cursor.close()
+    return row
+
+# Check if user is already registered for the event
+def is_registered_for_event(cnxn, event_id, NTID):
+    cursor = cnxn.cursor()
+    query = f"SELECT COUNT(*) FROM EventRegistration WHERE event_id = {event_id} AND NTID = '{NTID}';"
+    cursor.execute(query)
+    count = cursor.fetchone()[0]
+    cursor.close()
+    return count > 0
+
+# Register user for the event
+def register_user_for_event(cnxn, event_id, NTID):
+    cursor = cnxn.cursor()
+    query = f"INSERT INTO EventRegistration (event_id, NTID) VALUES ({event_id}, '{NTID}');"
+    cursor.execute(query)
+    cnxn.commit()
+    cursor.close()

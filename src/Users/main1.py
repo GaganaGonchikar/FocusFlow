@@ -1,7 +1,7 @@
 import pyodbc
 import uvicorn
 import config
-import py_functions
+import py_functions1
 import logging
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine
@@ -11,8 +11,11 @@ import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import py_functions
+from fastapi import FastAPI, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi.responses import JSONResponse
+
+# import py_functions
 
 app = FastAPI()
 
@@ -63,11 +66,10 @@ cnxn = connect_db(pwd)
 @app.post("/signup")
 def signup(NTID: str, first_name: str, last_name: str, email: str, phone: str, location: str, password: str, approved: bool):
     try:
-        py_functions.insert_signup(cnxn, NTID, first_name, last_name, email, phone, location, password, approved)
+        py_functions1.insert_signup(cnxn, NTID, first_name, last_name, email, phone, location, password, approved)
 
         # Close database connection
-        cnxn.close()
-
+    
         logging.info("Sign up successful")
         return {"message": "Sign up successful"}
     except Exception as e:
@@ -77,13 +79,13 @@ def signup(NTID: str, first_name: str, last_name: str, email: str, phone: str, l
 # Login endpoint
 @app.post("/login")
 # async def login(credentials: HTTPBasicCredentials):
-def login(username: str, password: str,credentials: HTTPBasicCredentials):
+def login(username: str, password: str):
     try:
         # Connect to database
-        row = py_functions.check_credentials(cnxn, username, password)
+        row = py_functions1.check_credentials(cnxn, username, password)
 
         # Close database connection
-        cnxn.close()
+        # cnxn.close()
 
         if not row:
             raise HTTPException(status_code=401, detail="Invalid username or password")
@@ -93,11 +95,12 @@ def login(username: str, password: str,credentials: HTTPBasicCredentials):
         logging.error(f"Error in login endpoint: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
+
 # Define endpoints
 @app.get('/user-list/')
 def get_user_data():
     try:
-        df = py_functions.fetch_userdata(cnxn)
+        df = py_functions1.fetch_userdata(cnxn)
         logging.info('User data fetched successfully')
         return df.to_dict('r')
     except Exception as e:
@@ -107,7 +110,7 @@ def get_user_data():
 @app.put('/update-user-details/{NTID}')
 def update_user_details(NTID: str, first_name: str, last_name: str, email: str, phone: str, location: str, approved: bool):
     try:
-        py_functions.update_user_details(cnxn, NTID, first_name, last_name, email, phone, location, approved)
+        py_functions1.update_user_details(cnxn, NTID, first_name, last_name, email, phone, location, approved)
         logging.info(f'User details updated for {NTID}')
     except Exception as e:
         logging.error(str(e))
@@ -117,7 +120,7 @@ def update_user_details(NTID: str, first_name: str, last_name: str, email: str, 
 @app.delete('/delete-user/{NTID}')
 def delete_event(NTID: str):
     try:
-        py_functions.delete_user(cnxn, NTID)
+        py_functions1.delete_user(cnxn, NTID)
         logging.info(f'User {NTID} deleted successfully')
     except Exception as e:
         logging.error(str(e))
@@ -127,7 +130,7 @@ def delete_event(NTID: str):
 @app.get('/event-data/')
 def get_event_data():
     try:
-        df = py_functions.fetch_eventdata(cnxn)
+        df = py_functions1.fetch_eventdata(cnxn)
         logging.info('Event data fetched successfully')
         return df.to_dict('r')
     except Exception as e:
@@ -137,7 +140,7 @@ def get_event_data():
 @app.put('/update-event-details/{event_id}')
 def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
     try:
-        py_functions.update_event_details(cnxn, event_id, event_name, event_location, event_description, event_date)
+        py_functions1.update_event_details(cnxn, event_id, event_name, event_location, event_description, event_date)
         logging.info(f'Event details updated for event {event_id}')
     except Exception as e:
         logging.error(str(e))
@@ -147,7 +150,7 @@ def update_event_details(event_id: str, event_name: str, event_location: str, ev
 @app.delete('/delete-event/{event_id}')
 def delete_event(event_id: str):
     try:
-        py_functions.delete_event(cnxn, event_id)
+        py_functions1.delete_event(cnxn, event_id)
         logging.info(f'Event {event_id} deleted successfully')
     except Exception as e:
         logging.error(str(e))
@@ -157,7 +160,7 @@ def delete_event(event_id: str):
 @app.post('/add-event/')
 def add_event_endpoint(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
     try:
-        py_functions.add_event(cnxn, event_id, event_name, event_location, event_description, event_date)
+        py_functions1.add_event(cnxn, event_id, event_name, event_location, event_description, event_date)
         logging.info(f'Event {event_id} added successfully')
     except Exception as e:
         logging.error(str(e))
@@ -165,29 +168,79 @@ def add_event_endpoint(event_id: str, event_name: str, event_location: str, even
     return {'message': 'Event added successfully'}
 
 
-
-
-# @app.post('/register-event/{event_id}/{NTID}')
+# @app.post('/register-event/{event_id}')
 # def register_event(event_id: int, NTID: str):
 #     try:
 #         # Fetch user details
-#         user = py_functions.fetch_user_by_ntid(cnxn, NTID)
-#         if user is None:
-#             raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found")
+#         # user = py_functions1.fetch_user_by_ntid(cnxn, NTID)
+#         # if user is None:
+#         #     raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found")
+
+#         signups_df = py_functions1.fetch_userdata(cnxn)
+#         user = signups_df[signups_df['NTID'] == NTID]
+#         if user.empty:
+#             raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found in signups")
         
 #         # Fetch event details
-#         event = py_functions.fetch_event_by_id(cnxn, event_id)
+#         event = py_functions1.fetch_event_by_id(cnxn, event_id)
 #         if event is None:
 #             raise HTTPException(status_code=404, detail=f"Event with ID {event_id} not found")
         
+#         # Check if user is already registered for the event
+#         if py_functions1.is_registered_for_event(cnxn, event_id, NTID):
+#             raise HTTPException(status_code=400, detail="User is already registered for this event")
+        
 #         # Register user for the event
-#         py_functions.register_user_for_event(cnxn, event_id, NTID)
+#         py_functions1.register_user_for_event(cnxn, event_id, NTID)
 #         logging.info(f'User {NTID} registered for event {event_id}')
         
 #         return {'message': 'User registered for event successfully'}
 #     except Exception as e:
 #         logging.error(str(e))
 #         raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+
+
+@app.post('/register-event/{event_id}')
+def register_event(event_id: str, NTID: str):
+    try:
+        # Fetch user details
+        # user = py_functions1.fetch_user_by_ntid(cnxn, NTID)
+        # if user is None:
+        #     raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found")
+
+        signups_df = py_functions1.fetch_userdata(cnxn)
+        user = signups_df[signups_df['NTID'] == NTID]
+        if user.empty:
+            raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found in signups")
+        
+        # Fetch event details
+        # event = py_functions1.fetch_event_by_id(cnxn, event_id)
+        # if event is None:
+        #     raise HTTPException(status_code=404, detail=f"Event with ID {event_id} not found")
+        
+        events_df = py_functions1.fetch_eventdata(cnxn)
+        event = events_df[events_df['event_id'] == event_id]
+        if event.empty:
+            raise HTTPException(status_code=404, detail=f"Event with event id {event_id} not found in events")
+        
+        # Check if user is already registered for the event
+        if py_functions1.is_registered_for_event(cnxn, event_id, NTID):
+            raise HTTPException(status_code=400, detail="User is already registered for this event")
+        
+        # Register user for the event
+        py_functions1.register_user_for_event(cnxn, event_id, NTID)
+        logging.info(f'User {NTID} registered for event {event_id}')
+        
+        return {'message': 'User registered for event successfully'}
+    except HTTPException as he:
+        logging.error(str(he))
+        raise he
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
 
 # Run the app
 if __name__ == "__main__":

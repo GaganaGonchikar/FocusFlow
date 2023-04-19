@@ -84,7 +84,7 @@ const EventDetailsTable = () => {
     <div className="container">
       <div className="logo-container">
       {/* <img src={boschlogo} alt="Bosch logo" className="logo" /> */}
-      <h2 className="title1">MANAGE EVENTS</h2>
+      {/* <h3 className="title1">MANAGE EVENTS</h3> */}
       {/* <img src={focusFlow} alt="Focus Flow logo" className="logo1" /> */}
       </div>
       <div className="search-form">

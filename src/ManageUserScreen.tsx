@@ -88,7 +88,7 @@ const UserDetailsTable = () => {
     <div className="container">
       <div className="logo-container">
       {/* <img src={boschlogo} alt="Bosch logo" className="logo" /> */}
-      <h2 className="title1">MANAGE USERS</h2>
+      {/* <h2 className="title1">MANAGE USERS</h2> */}
       {/* <img src={focusFlow} alt="Focus Flow logo" className="logo" /> */}
       </div>
 

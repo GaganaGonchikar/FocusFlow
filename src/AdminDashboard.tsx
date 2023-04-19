@@ -72,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   logo1: {
     width: '120px',
   },
+  header: {
+    color: '#FFFFFF', // Updated color to white
+  },
   navbar: {
     backgroundColor: 'rgb(145, 108, 212)',
   },
@@ -90,7 +93,7 @@ const AdminDashboard: React.FC = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar >
           <img src={boschlogo} alt="Bosch logo" className={classes.logo} />
           <Typography variant="h5" className={classes.title}>
             ADMIN DASHBOARD
