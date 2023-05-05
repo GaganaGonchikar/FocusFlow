@@ -81,29 +81,82 @@
 
 // export default App;
 
+
+// import React from 'react';
+// import { Route, Link } from 'wouter';
+// import LoginForm from './Users/loginform';
+// import SignUpForm from './Users/signup'; 
+//  const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       <nav>
+//         <ul>
+          
+//           <li>
+//             <Link to="/signup">Sign up</Link>
+//           </li>
+//           <li>
+//             <Link to="/login">Login</Link>
+//           </li>
+//         </ul>
+//       </nav>
+      
+//       <Route path="/signup" component={SignUpForm} />
+//       <Route path="/login" component={LoginForm} /> {/* Add this line for the Sign up route */}
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+// import React from 'react';
+// import ParticipationHistory from './Users/ParticipationHistory'
+// const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       <ParticipationHistory/>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// import React from 'react';
+// import UpcomingEvents from './Users/UpcomingEvents'
+// const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       <UpcomingEvents/>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
 import React from 'react';
 import { Route, Link } from 'wouter';
-// import AdminDashboard from './AdminDashboard';
-import LoginForm from './Users/loginform';
-import SignUpForm from './Users/signup'; // Assuming you have a SignUpForm component for the sign up page
- // Assuming you have a LoginForm component for the login page
- const App: React.FC = () => {
+import ParticipationHistory from './Users/ParticipationHistory';
+import UpcomingEvents from './Users/UpcomingEvents';
+
+const App: React.FC = () => {
   return (
     <div className="App">
       <nav>
         <ul>
-          
-          <li>
-            <Link to="/signup">Sign up</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+          <li><Link to="/participation">Participation History</Link></li>
+          <li><Link to="/events">Upcoming Events</Link></li>
         </ul>
       </nav>
-      
-      <Route path="/signup" component={SignUpForm} />
-      <Route path="/login" component={LoginForm} /> {/* Add this line for the Sign up route */}
+      <Route path="/participation">
+        <ParticipationHistory />
+      </Route>
+      <Route path="/events">
+        <UpcomingEvents />
+      </Route>
     </div>
   );
 };

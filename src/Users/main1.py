@@ -127,6 +127,18 @@ def delete_event(NTID: str):
         raise HTTPException(status_code=404, detail="Could not delete user details in the database")
     return {'message': 'User deleted successfully'}
 
+@app.post('/import-event-data')
+def import_event_data():
+    try:
+        py_functions1.import_eventdata(cnxn)
+        logging.info('Event data imported successfully')
+        return {'message': 'Event data imported successfully'}
+    except Exception as e:
+        logging.error(str(e))
+        return {'message': f'Error importing event data: {str(e)}'}
+
+    
+
 @app.get('/event-data/')
 def get_event_data():
     try:
@@ -136,6 +148,19 @@ def get_event_data():
     except Exception as e:
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
+
+# @app.get('/event-data/')
+# def get_event_data(filename: str):
+#     try:
+#         # Fetch the data from the Excel file and log a success message
+#         df = py_functions1.fetch_eventdata(filename)
+#         logging.info(f'Event data fetched successfully from {filename}')
+
+#         # Return the data as a dictionary
+#         return df
+#     except Exception as e:
+#         logging.error(str(e))
+#         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 @app.put('/update-event-details/{event_id}')
 def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
@@ -168,57 +193,13 @@ def add_event_endpoint(event_id: str, event_name: str, event_location: str, even
     return {'message': 'Event added successfully'}
 
 
-# @app.post('/register-event/{event_id}')
-# def register_event(event_id: int, NTID: str):
-#     try:
-#         # Fetch user details
-#         # user = py_functions1.fetch_user_by_ntid(cnxn, NTID)
-#         # if user is None:
-#         #     raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found")
-
-#         signups_df = py_functions1.fetch_userdata(cnxn)
-#         user = signups_df[signups_df['NTID'] == NTID]
-#         if user.empty:
-#             raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found in signups")
-        
-#         # Fetch event details
-#         event = py_functions1.fetch_event_by_id(cnxn, event_id)
-#         if event is None:
-#             raise HTTPException(status_code=404, detail=f"Event with ID {event_id} not found")
-        
-#         # Check if user is already registered for the event
-#         if py_functions1.is_registered_for_event(cnxn, event_id, NTID):
-#             raise HTTPException(status_code=400, detail="User is already registered for this event")
-        
-#         # Register user for the event
-#         py_functions1.register_user_for_event(cnxn, event_id, NTID)
-#         logging.info(f'User {NTID} registered for event {event_id}')
-        
-#         return {'message': 'User registered for event successfully'}
-#     except Exception as e:
-#         logging.error(str(e))
-#         raise HTTPException(status_code=500, detail="Internal Server Error")
-
-
-
-
 @app.post('/register-event/{event_id}')
 def register_event(event_id: str, NTID: str):
     try:
-        # Fetch user details
-        # user = py_functions1.fetch_user_by_ntid(cnxn, NTID)
-        # if user is None:
-        #     raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found")
-
         signups_df = py_functions1.fetch_userdata(cnxn)
         user = signups_df[signups_df['NTID'] == NTID]
         if user.empty:
             raise HTTPException(status_code=404, detail=f"User with NTID {NTID} not found in signups")
-        
-        # Fetch event details
-        # event = py_functions1.fetch_event_by_id(cnxn, event_id)
-        # if event is None:
-        #     raise HTTPException(status_code=404, detail=f"Event with ID {event_id} not found")
         
         events_df = py_functions1.fetch_eventdata(cnxn)
         event = events_df[events_df['event_id'] == event_id]
@@ -240,8 +221,94 @@ def register_event(event_id: str, NTID: str):
     except Exception as e:
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
+    
+
+# @app.get('/participation-history/{NTID}')
+# def get_participation_history(NTID: str):
+#     try:
+#         # Fetch participation history
+#         participation_history = py_functions1.fetch_participation_history(cnxn, NTID)
+#         logging.info(f'User {NTID} has registered to these events')
+
+#         # Return results
+#         if participation_history:
+#             event_list = []
+#             for row in participation_history:
+#                 event = {
+#                     'event_name': row[0],
+#                     'event_date': row[1],
+#                     'event_location': row[2],
+#                     'event_description': row[3],
+#                     'event_id': row[4]
+#                 }
+#                 event_list.append(event)
+#             return {'participation_history': event_list}
+#         else:
+#             return {'participation_history': None}
+        
+#     except Exception as e:
+#         logging.error(str(e))
+#         raise HTTPException(status_code=500, detail="Internal Server Error")
+
+@app.get('/participation-history/{NTID}')
+def get_participation_history(NTID: str):
+    try:
+        # Fetch participation history
+        participation_history = py_functions1.fetch_participation_history(cnxn, NTID)
+        logging.info(f'User {NTID} has registered to these events')
+
+        # If no results found, raise an error
+        if not participation_history:
+            raise HTTPException(status_code=404, detail=f'User with NTID {NTID} has not registered to any events')
+
+        # Return results
+        event_list = []
+        for row in participation_history:
+            event = {
+                'event_name': row[0],
+                'event_date': row[1],
+                'event_location': row[2],
+                'event_description': row[3],
+                'event_id': row[4]
+            }
+            event_list.append(event)
+        return {'participation_history': event_list}
+        
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
+@app.get('/upcoming-events/{NTID}')
+def get_upcoming_events(NTID: str):
+    try:
+        # Fetch participation history
+        upcoming_events = py_functions1.upcoming_events(cnxn, NTID)
+        logging.info(f'User {NTID} has registered to these events')
+
+        # If no results found, raise an error
+        if not upcoming_events:
+            raise HTTPException(status_code=404, detail=f'User with NTID {NTID} has not registered to any events')
+
+        # Return results
+        event_list = []
+        for row in upcoming_events:
+            event = {
+                'event_name': row[0],
+                'event_date': row[1],
+                'event_location': row[2],
+                'event_description': row[3],
+                'event_id': row[4]
+            }
+            event_list.append(event)
+        return {'upcoming_events': event_list}
+        
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
 # Run the app
 if __name__ == "__main__":
+    # py_functions1.import_eventdata('EventsData.xlsx', cnxn)
+    # logging.info('Event data imported successfully')
     uvicorn.run(app, host="127.0.0.1", port=8000)

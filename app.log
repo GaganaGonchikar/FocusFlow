@@ -828,3 +828,158 @@
 2023-04-18 18:52:43,023 [ERROR] Execution failed on sql 'SELECT * FROM Events': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
 2023-04-18 18:53:24,391 [ERROR] Execution failed on sql 'SELECT * FROM Events': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
 2023-04-18 18:53:24,391 [ERROR] Execution failed on sql 'SELECT * FROM Events': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-04-25 09:51:02,745 [INFO] User data fetched successfully
+2023-04-25 09:52:59,959 [INFO] Event data fetched successfully
+2023-04-25 09:53:13,743 [INFO] User ABC1KOR registered for event 1091
+2023-04-25 10:01:18,785 [ERROR] ('The SQL contains 0 parameter markers, but 1 parameters were supplied', 'HY000')
+2023-04-25 10:34:08,958 [INFO] Event 7612 added successfully
+2023-04-25 10:53:34,074 [INFO] User data fetched successfully
+2023-04-25 10:53:51,124 [INFO] Event data fetched successfully
+2023-04-25 10:54:02,744 [ERROR] 
+2023-04-25 11:46:10,278 [ERROR] 'NoneType' object has no attribute 'to_dict'
+2023-04-25 12:06:30,906 [ERROR] ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'EventRegistraion'. (208) (SQLExecDirectW)")
+2023-04-25 12:09:54,553 [ERROR] ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'EventRegistraion'. (208) (SQLExecDirectW)")
+2023-04-25 12:26:12,994 [ERROR] 'pyodbc.Cursor' object has no attribute 'cursor'
+2023-04-25 12:29:55,804 [ERROR] 'pyodbc.Cursor' object has no attribute 'cursor'
+2023-04-25 12:36:31,032 [INFO] Event data fetched successfully
+2023-04-25 12:36:49,027 [INFO] User GAGB1KOR registered for event 20248
+2023-04-25 12:42:24,794 [INFO] User GAGB1KOR has rigistered to these events
+2023-04-25 12:42:47,137 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 12:50:44,406 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 12:50:49,038 [INFO] User GAGB1KO has registered to these events
+2023-04-25 12:50:49,038 [ERROR] 
+2023-04-25 12:51:06,800 [INFO] User data fetched successfully
+2023-04-25 12:51:18,129 [INFO] User ABCDEKOR has registered to these events
+2023-04-25 12:51:18,129 [ERROR] 
+2023-04-25 12:51:44,407 [INFO] User ZZY1KOR has registered to these events
+2023-04-25 13:28:55,538 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:34:53,299 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:37:31,901 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:38:08,661 [INFO] User ZZY1KOR has registered to these events
+2023-04-25 13:39:26,218 [INFO] User ZZY1KO has registered to these events
+2023-04-25 13:39:26,218 [ERROR] 
+2023-04-25 13:39:27,523 [INFO] User ZZY1KO has registered to these events
+2023-04-25 13:39:27,523 [ERROR] 
+2023-04-25 13:39:38,842 [INFO] User ABC1KOR has registered to these events
+2023-04-25 13:39:44,088 [INFO] User ASS has registered to these events
+2023-04-25 13:39:44,088 [ERROR] 
+2023-04-25 13:39:44,556 [INFO] User ASS has registered to these events
+2023-04-25 13:39:44,557 [ERROR] 
+2023-04-25 13:39:44,697 [INFO] User ASS has registered to these events
+2023-04-25 13:39:44,697 [ERROR] 
+2023-04-25 13:39:53,117 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:44:05,740 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:44:12,289 [INFO] User GAGB1KO has registered to these events
+2023-04-25 13:44:12,289 [ERROR] 
+2023-04-25 13:44:18,938 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:45:14,203 [INFO] User ZZY1KOR has registered to these events
+2023-04-25 13:51:25,691 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 13:51:50,461 [INFO] User ZZY1KOR has registered to these events
+2023-04-25 13:52:30,192 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 15:37:38,029 [INFO] User GAGB1KOR has registered to these events
+2023-04-25 15:54:51,935 [ERROR] [Errno 2] No such file or directory: 'EventsData.xlsx'
+2023-04-25 15:59:15,575 [ERROR] [Errno 2] No such file or directory: 'EventsData.xlsx'
+2023-04-25 16:02:44,881 [INFO] Event data fetched successfully
+2023-04-25 16:03:26,916 [INFO] User GAGB1KOR registered for event 5827
+2023-04-25 16:03:41,329 [INFO] User GAGB1KOR registered for event 9831
+2023-04-25 16:03:51,742 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 09:06:37,870 [INFO] Event data fetched successfully
+2023-04-26 09:07:04,225 [INFO] User GAGB1KOR registered for event 72988
+2023-04-26 09:07:14,260 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 09:07:26,509 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 09:22:40,435 [INFO] User ZZY1KOR has registered to these events
+2023-04-26 09:22:50,706 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 09:26:46,951 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 09:36:19,690 [INFO] User GAGB1KOR has registered to these events
+2023-04-26 10:08:38,418 [ERROR] Invalid file path or buffer object type: <class 'pyodbc.Connection'>
+2023-04-26 10:08:45,435 [ERROR] Invalid file path or buffer object type: <class 'pyodbc.Connection'>
+2023-04-26 10:16:38,332 [INFO] Event data fetched successfully
+2023-04-26 11:16:49,886 [INFO] Event data fetched successfully
+2023-04-26 11:23:37,444 [INFO] Event data fetched successfully
+2023-04-26 11:40:32,979 [ERROR] Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'sqlite_master'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2023-04-26 11:47:30,746 [ERROR] Error importing event data: argument 1 must be a string or unicode object
+2023-04-26 11:50:52,123 [ERROR] Error importing event data: argument 1 must be a string or unicode object
+2023-04-26 11:52:31,731 [ERROR] Error importing event data: Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'sqlite_master'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2023-04-26 11:54:38,762 [ERROR] Error importing event data: argument 1 must be a string or unicode object
+2023-04-26 11:55:00,616 [ERROR] Error importing event data: argument 1 must be a string or unicode object
+2023-04-26 11:56:39,090 [ERROR] Error importing event data: Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'sqlite_master'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2023-04-26 11:57:51,642 [ERROR] Execution failed on sql 'SELECT name FROM sqlite_master WHERE type='table' AND name=?;': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'sqlite_master'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2023-04-26 12:06:59,314 [ERROR] ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The incoming tabular data stream (TDS) remote procedure call (RPC) protocol stream is incorrect. Parameter 8 (""): The supplied value is not a valid instance of data type float. Check the source data for invalid values. An example of an invalid value is data of numeric type with scale greater than precision. (8023) (SQLExecDirectW)')
+2023-04-26 12:14:32,220 [INFO] Event data imported successfully
+2023-04-26 12:14:43,200 [INFO] Event data fetched successfully
+2023-04-26 12:16:55,269 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (4545). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:17:20,772 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (4545). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:44:56,694 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (4545). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:45:46,123 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (6789). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:45:54,104 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (6789). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:46:10,780 [ERROR] ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_events_event_id'. Cannot insert duplicate key in object 'dbo.events'. The duplicate key value is (6789). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2023-04-26 12:49:08,318 [INFO] Event data imported successfully
+2023-04-26 12:49:21,962 [INFO] Event data fetched successfully
+2023-04-26 12:51:01,587 [INFO] Event data imported successfully
+2023-04-26 12:51:09,773 [INFO] Event data fetched successfully
+2023-04-27 10:55:31,058 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:55:32,975 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:55:56,384 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:55:56,951 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:56:05,984 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:56:06,697 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 10:56:35,944 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 11:04:52,865 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 11:09:19,236 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 11:10:50,426 [INFO] Event data imported successfully
+2023-04-27 11:17:15,097 [INFO] Event data imported successfully
+2023-04-27 11:17:23,211 [INFO] Event data fetched successfully
+2023-04-27 14:31:53,415 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 14:33:10,363 [INFO] User GAGB1KOR has registered to these events
+2023-04-27 14:40:17,985 [INFO] User zzy1kor has registered to these events
+2023-04-27 14:40:24,957 [INFO] User gagb1kor has registered to these events
+2023-04-27 14:48:35,050 [INFO] User GAGB1KOR has registered to these events
+2023-04-28 09:18:58,524 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 09:56:55,165 [ERROR] module 'datetime' has no attribute 'now'
+2023-05-02 09:57:42,738 [ERROR] module 'datetime' has no attribute 'now'
+2023-05-02 09:58:54,777 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:04:37,788 [ERROR] ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]'CURDATE' is not a recognized built-in function name. (195) (SQLExecDirectW)")
+2023-05-02 10:04:37,886 [ERROR] ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]'CURDATE' is not a recognized built-in function name. (195) (SQLExecDirectW)")
+2023-05-02 10:07:38,831 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:07:46,703 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:12:31,524 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:24:11,795 [INFO] User ${NTID} has registered to these events
+2023-05-02 10:24:11,795 [ERROR] 
+2023-05-02 10:24:58,274 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:25:01,666 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:25:08,854 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:25:08,854 [ERROR] 
+2023-05-02 10:25:15,188 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:27:31,988 [INFO] Event 9840 added successfully
+2023-05-02 10:27:53,970 [INFO] Event 1345 added successfully
+2023-05-02 10:28:16,001 [INFO] Event 29928 added successfully
+2023-05-02 10:28:41,902 [INFO] Event data fetched successfully
+2023-05-02 10:29:05,730 [INFO] User GAGB1KOR registered for event 9840
+2023-05-02 10:29:31,241 [INFO] User GAGB1KOR registered for event 29928
+2023-05-02 10:30:01,386 [INFO] User GAGB1KOR registered for event 1345
+2023-05-02 10:30:17,365 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:30:55,838 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:30:57,169 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:31:50,407 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:32:03,417 [INFO] User ZZY1KOR has registered to these events
+2023-05-02 10:57:25,780 [INFO] User GAGB1KOR has registered to these events
+2023-05-02 10:57:56,619 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:05:16,028 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:07:07,361 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:07:10,402 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:07:28,950 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:09:34,563 [INFO] User GAGB1KO has registered to these events
+2023-05-04 12:09:34,568 [ERROR] 
+2023-05-04 12:09:37,968 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:09:45,715 [INFO] User ZZY1KOR has registered to these events
+2023-05-04 12:14:21,863 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:16:05,575 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:16:44,696 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:27:02,963 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:27:59,076 [INFO] User ZZY1KOR has registered to these events
+2023-05-04 12:31:24,966 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:37:28,071 [INFO] User GAGB1KOR has registered to these events
+2023-05-04 12:45:31,331 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 10:15:41,819 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 11:15:20,695 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 11:15:30,277 [INFO] User GAGB1KOR has registered to these events
