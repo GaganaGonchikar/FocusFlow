@@ -4,8 +4,8 @@ import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import './EventDetailsTable.css';
-import focusFlow from "./focusFlow.png";
-import boschlogo from "./boschlogo.png";
+import focusFlow from './focusFlow.png';
+import boschlogo from './boschlogo.png';
 
 type EventDetails = {
   event_id: string;
@@ -13,12 +13,14 @@ type EventDetails = {
   event_location: string;
   event_description: string;
   event_date: string;
+  type_of_event: string;
 };
 
 const EventDetailsTable = () => {
   const [eventDetails, setEventDetails] = useState<EventDetails[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [editingEnabled, setEditingEnabled] = useState(false);
+  const [filterQuery, setFilterQuery] = useState<string[]>([]);
 
   useEffect(() => {
     axios.get<EventDetails[]>('http://127.0.0.1:8000/event-data').then((response) => {
@@ -44,8 +46,6 @@ const EventDetailsTable = () => {
     );
   };
 
-  const filteredEventDetails = eventDetails.filter((event) => searchEvent(event, searchQuery));
-
   const handleRowUpdating = async (e: any) => {
     const updatedEvent = { ...e.oldData, ...e.newData };
     try {
@@ -55,15 +55,15 @@ const EventDetailsTable = () => {
         event_location: updatedEvent.event_location,
         event_description: updatedEvent.event_description,
         event_date: updatedEvent.event_date,
+        type_of_event: updatedEvent.type_of_event,
       }).toString();
-      
+
       await axios.put(`http://127.0.0.1:8000/update-event-details/${updatedEvent.event_id}?${queryParams}`);
       alert('Event details updated successfully');
     } catch (error) {
       alert('Could not update user details');
     }
   };
-  
 
   const handleRowRemoving = async (e: any) => {
     try {
@@ -76,24 +76,47 @@ const EventDetailsTable = () => {
       alert('Could not delete event');
     }
   };
+
+  const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
+    setFilterQuery(selectedOptions);
+  };
+
+  const filteredEventDetails = eventDetails.filter((event) => {
+    const isMatch = searchEvent(event, searchQuery);
+    const isCategoryMatch = filterQuery.length === 0 || filterQuery.includes(event.type_of_event);
+    return isMatch && isCategoryMatch;
+  });
+
+  const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
   
   return (
     <div className="container">
       <div className="logo-container">
-        <img src={boschlogo} alt="Bosch logo" className="logo" />
+        {/* {<img src={boschlogo} alt="Bosch logo" className="logo" />} */}
         <h1 className="title">MANAGE EVENTS</h1>
-        <img src={focusFlow} alt="Focus Flow logo" className="logo" />
+        {/* { <img src={focusFlow} alt="Focus Flow logo" className="logo" />} */}
       </div>
       <div className="search-form">
-        <label htmlFor="search-input">Search:</label>
-        <input
-          id="search-input"
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="Search by NTID/First Name/Last Name/Email or Location"
-        />
-      </div>
+  <label htmlFor="search-input">Search:</label>
+  <input
+    id="search-input"
+    type="text"
+    value={searchQuery}
+    onChange={handleSearch}
+    placeholder="Search by NTID/First Name/Last Name/Email or Location"
+  />
+  <label htmlFor="filter-select">Filter by Type:</label>
+<select id="filter-select" value={filterQuery} onChange={handleFilter} multiple>
+  <option value="">All</option>
+  {uniqueTypes.map(type => (
+    <option key={type} value={type}>{type}</option>
+  ))}
+</select>
+
+
+</div>
+
       
       <DataGrid
         dataSource={filteredEventDetails}
@@ -120,6 +143,7 @@ const EventDetailsTable = () => {
       <Column dataField="event_location" caption="Location" />
       <Column dataField="event_description" caption="Description" />
       <Column dataField="event_date" caption="Date" />
+      <Column dataField="type_of_event" caption="Category" />
       </DataGrid>
   </div>
  );

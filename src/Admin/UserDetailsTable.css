@@ -1,6 +1,6 @@
 
 body {
-  background-color: #688bd1;
+  background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
   color: #333333;
@@ -15,8 +15,8 @@ body {
   max-width: 1100px;
   text-align: center;
   background-color: #fff;
-  border-top: 50px solid #688bd1;
-  border-bottom: 10px solid #688bd1;
+  border-top: 50px solid rgb(119, 76, 198);
+  border-bottom: 10px solid rgb(119, 76, 198);
   align-items: center;
   @media (max-width: 768px) {
     padding: 10px;
@@ -159,14 +159,17 @@ input[type="text"]:focus {
 /*For Logos*/
 .logo-container {
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
+  max-width: 1100px;
   display: flex;
   align-items: center;
 }
 
 .logo {
   height: 70px;
-  margin-right: 10px;
+  margin-right: 1100px;
+  max-width: 1100px;
+  align-items: left;
 }
 
 .title {
