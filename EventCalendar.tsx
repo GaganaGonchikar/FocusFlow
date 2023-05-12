@@ -12,6 +12,7 @@ interface EventDetails {
   event_location: string;
   event_description: string;
   event_date: string;
+  type_of_event: string;
 }
 
 interface EventCalendarProps extends RouteComponentProps {}
@@ -80,8 +81,9 @@ class EventCalendar extends React.Component<
     const { events, selectedEvent } = this.state;
 
     return (
+      <div className="new">
       <div className="event-calendar">
-        <h1>Event Calendar</h1>
+        <h1 className="title">EVENT CALENDAR</h1>
         <Calendar
           localizer={localizer}
           events={events.map((event) => ({
@@ -94,28 +96,30 @@ class EventCalendar extends React.Component<
           selectable
           views={["month", "agenda"]}
           timeslots={4}
-          className="rbc-calendar"
+          className="calendar"
         />
 
         {selectedEvent && (
           <div className="modal-overlay">
             <div className="modal">
               <div className="modal-header">
-                <h2>{selectedEvent.event_name}</h2>
-                <button className="close" onClick={this.handleCloseModal}>
+                <h2 className="modal-title">{selectedEvent.event_name}</h2>
+                <button className="modal-close" onClick={this.handleCloseModal}>
                   &times;
                 </button>
               </div>
               <div className="modal-body">
-                <p>Date: {selectedEvent.event_date}</p>
-                <p>Location: {selectedEvent.event_location}</p>
-                <p>Description: {selectedEvent.event_description}</p>
-                <p>Event Id: {selectedEvent.event_id}</p>
+                <p><strong>Date:</strong> {selectedEvent.event_date}</p>
+                <p><strong>Location:</strong> {selectedEvent.event_location}</p>
+                <p><strong>Description:</strong> {selectedEvent.event_description}</p>
+                <p><strong>Event Id:</strong> {selectedEvent.event_id}</p>
+                <p><strong>Type of Event:</strong> {selectedEvent.type_of_event}</p>
                 <button onClick={this.handleRegister}>Register</button>
               </div>
             </div>
           </div>
         )}
+      </div>
       </div>
     );
   }

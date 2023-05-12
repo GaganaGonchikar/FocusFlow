@@ -1,7 +1,19 @@
+.new {
+  background-image: url('bg.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  
+}
 .event-calendar {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* adjust the opacity as needed */
+  width: 80%;
+/* center the calendar horizontally */
+
+  border-radius: 10px;
 }
 
 .rbc-calendar {
