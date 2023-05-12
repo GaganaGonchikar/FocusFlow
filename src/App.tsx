@@ -9,7 +9,7 @@ import EventDetailsTable from './Admin/EventDetailsTable';
 import UserDetailsTable from './Admin/UserDetailsTable';
 import PopularEvents from './User/popularevents';
 import eventlist from './User/eventlist';
-// import excelupload from'./Admin/excelupload';
+import ImportEventData from'./Admin/UploadExcel';
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
       <Route path="/add-events" component={AddEventForm} />
       <Route path="/popular-events" component={PopularEvents} />
       <Route path="/userevent-list" component={eventlist} />
-      {/* <Route path="/excel-upload" component={excelupload} /> */}
+      <Route path="/excel-upload" component={ImportEventData} />
     </Switch>
   );
 };

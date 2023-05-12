@@ -21,9 +21,9 @@ const AdminDashboard = () => {
         <Link to="/manage-users" className="navLink">
           Manage Users
         </Link>
-        {/* <Link to="/excel-upload" className="navLink">
+         <Link to="/excel-upload" className="navLink">
           Upload Events
-        </Link> */}
+        </Link> 
       </nav>
 
       

@@ -1,0 +1,56 @@
+.upload-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+  
+  .upload-input {
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .upload-button {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .upload-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  .upload-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .upload-message.loading {
+    color: #007bff;
+  }
+  
+  .upload-message.success {
+    color: #28a745;
+  }
+  
+  .upload-message.error {
+    color: #dc3545;
+  }
+  
