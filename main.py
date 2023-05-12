@@ -17,6 +17,11 @@ from typing import List
 import pandas as pd
 from typing import List
 from pydantic import BaseModel
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+from io import BytesIO
+import pandas as pd
+
 
 app = FastAPI()
 
@@ -181,7 +186,28 @@ def get_event_details(eventId: str):
     except Exception as e:
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
+    
+#excel sheet
+@app.post('/import-event-data')
+async def import_event_data(file: UploadFile = File(...)):
+    try:
+        content = await file.read() # Read the file data from the request body
+        df = pd.read_excel(BytesIO(content)) # Read the data from the Excel file into a DataFrame
+        cursor = cnxn.cursor()
+        for index, row in df.iterrows():
+            event_id = row['event_id']
+            cursor.execute("SELECT COUNT(*) FROM Events WHERE event_id = ?", event_id)
+            count = cursor.fetchone()[0]
+            if count == 0:
+                cursor.execute("INSERT INTO Events (event_name, event_date, event_location, event_description, event_id) VALUES (?, ?, ?, ?, ?);", row['event_name'], row['event_date'], row['event_location'], row['event_description'], event_id)
+        cursor.commit()
+        logging.info('Event data imported successfully')
+        return JSONResponse(content={"message": "Event data imported successfully"})
+    except Exception as e:
+        logging.error(str(e))
+        return JSONResponse(content={"message": f'Error importing event data: {str(e)}'})
 
+    
 # Run the app
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)

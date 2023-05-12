@@ -1,4 +1,5 @@
 import pandas as pd
+from typing import Tuple
 
 #FOR USER SCREEN
 def fetch_userdata(engine):
@@ -71,3 +72,4 @@ def get_event_details(engine, eventId):
         return None
     event = df.to_dict(orient='records')[0]
     return event
+
