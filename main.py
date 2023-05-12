@@ -13,6 +13,10 @@ import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from typing import List
+import pandas as pd
+from typing import List
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -102,9 +106,9 @@ def get_event_data():
     
 
 @app.put('/update-event-details/{event_id}')
-def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
+def update_event_details(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str, type_of_event: str):
     try:
-        py_functions.update_event_details(cnxn, event_id, event_name, event_location, event_description, event_date)
+        py_functions.update_event_details(cnxn, event_id, event_name, event_location, event_description, event_date, type_of_event )
         logging.info(f'Event details updated for event {event_id}')
     except Exception as e:
         logging.error(str(e))
@@ -123,9 +127,9 @@ def delete_event(event_id: str):
     return {'message': 'Event deleted successfully'}
 
 @app.post('/add-event/')
-def add_event_endpoint(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str):
+def add_event_endpoint(event_id: str, event_name: str, event_location: str, event_description: str, event_date: str, type_of_event: str):
     try:
-        py_functions.add_event(cnxn, event_id, event_name, event_location, event_description, event_date)
+        py_functions.add_event(cnxn, event_id, event_name, event_location, event_description, event_date, type_of_event)
         logging.info(f'Event {event_id} added successfully')
     except Exception as e:
         logging.error(str(e))
@@ -156,8 +160,27 @@ def register_event(event_id: str, NTID: str):
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
+@app.get('/popular-events/')
+def get_popular_events():
+    try:
+        df = pd.read_sql_query("SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC", cnxn)
+        logging.info('Popular events fetched successfully')
+        return df.to_dict('r')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
-
+#For the eventlist screen for user
+@app.get('/event-details/{eventId}')
+def get_event_details(eventId: str):
+    try:
+        event = py_functions.get_event_details(cnxn, eventId)
+        if event is None:
+            raise HTTPException(status_code=404, detail="Event not found")
+        return event
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 # Run the app
 if __name__ == "__main__":
