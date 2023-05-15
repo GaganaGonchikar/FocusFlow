@@ -5,7 +5,9 @@ import { Calendar, momentLocalizer, DateLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./EventCalendar.css";
+import Header from '../Header';
 
+ 
 interface EventDetails {
   event_id: string;
   event_name: string;
@@ -81,9 +83,9 @@ class EventCalendar extends React.Component<
     const { events, selectedEvent } = this.state;
 
     return (
+      <div><Header title="EVENT CALENDAR" />
       <div className="new">
       <div className="event-calendar">
-        <h1 className="title">EVENT CALENDAR</h1>
         <Calendar
           localizer={localizer}
           events={events.map((event) => ({
@@ -119,6 +121,7 @@ class EventCalendar extends React.Component<
             </div>
           </div>
         )}
+      </div>
       </div>
       </div>
     );

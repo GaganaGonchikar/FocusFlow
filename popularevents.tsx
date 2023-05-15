@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Header from './../Header';
 
 interface PopularEvent {
   event_id: string;
@@ -46,7 +47,7 @@ const PopularEvents: React.FC = () => {
 
   return (
     <>
-      <h1>POPULAR EVENTS</h1>
+      <Header title="POPULAR EVENTS" />
       <ul>
         {popularEvents.map((event) => (
           <li>

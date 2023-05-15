@@ -3,8 +3,8 @@ import axios from 'axios';
 import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
-// import focusFlow from './focusFlow.png';
-// import boschlogo from './boschlogo.png';
+import Header from './../Header';
+
 
 type EventDetails = {
   event_id: string;
@@ -84,12 +84,9 @@ const eventlist = () => {
   
   const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
   return (
+    <div>
+      <Header title="EVENT LIST" />
     <div className="container">
-      <div className="logo-container">
-        {/* <img src={boschlogo} alt="Bosch logo" className="logo" /> */}
-        <h1 className="title">EVENT LIST</h1>
-        {/* <img src={focusFlow} alt="Focus Flow logo" className="logo" /> */}
-      </div>
       <div className="search-form">
         <label htmlFor="search-input">Search:</label>
         <input
@@ -158,6 +155,7 @@ const eventlist = () => {
   />
 </DataGrid>
 
+  </div>
   </div>
  );
 };
