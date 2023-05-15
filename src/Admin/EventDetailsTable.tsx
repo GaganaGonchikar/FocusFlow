@@ -3,9 +3,9 @@ import axios from 'axios';
 import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
-import './EventDetailsTable.css';
-import focusFlow from './focusFlow.png';
-import boschlogo from './boschlogo.png';
+import './Table.css';
+import Header from './../Header';
+import Navigation from './navigation';
 
 type EventDetails = {
   event_id: string;
@@ -91,12 +91,9 @@ const EventDetailsTable = () => {
   const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
   
   return (
+    <div><Header title="MANAGE EVENTS" />
+    <Navigation /> 
     <div className="container">
-      <div className="logo-container">
-        {/* {<img src={boschlogo} alt="Bosch logo" className="logo" />} */}
-        <h1 className="title">MANAGE EVENTS</h1>
-        {/* { <img src={focusFlow} alt="Focus Flow logo" className="logo" />} */}
-      </div>
       <div className="search-form">
   <label htmlFor="search-input">Search:</label>
   <input
@@ -145,6 +142,7 @@ const EventDetailsTable = () => {
       <Column dataField="event_date" caption="Date" />
       <Column dataField="type_of_event" caption="Category" />
       </DataGrid>
+  </div>
   </div>
  );
 };

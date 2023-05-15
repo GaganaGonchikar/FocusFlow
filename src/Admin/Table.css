@@ -10,18 +10,16 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  max-width: 100%;
   padding: 2rem;
-  max-width: 1100px;
   text-align: center;
   background-color: #fff;
-  border-top: 50px solid rgb(119, 76, 198);
-  border-bottom: 10px solid rgb(119, 76, 198);
+  border-bottom: 50px solid #688bd1;
   align-items: center;
+
   @media (max-width: 768px) {
     padding: 10px;
   }
-
 }
 
 h1 {

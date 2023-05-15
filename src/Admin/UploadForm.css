@@ -53,4 +53,9 @@
   .upload-message.error {
     color: #dc3545;
   }
-  
+
+  .form-wrapper{
+    margin-top: 20vh;
+    height: 150px;
+    width: 500px;
+  }

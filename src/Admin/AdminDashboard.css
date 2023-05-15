@@ -12,40 +12,6 @@
   padding: 10px 20px;
 }
 
-.logo2 {
-  width: 60px;
-  margin-right: 10px;
-}
-
-.title {
-  flex-grow: 1;
-  color: rgb(0, 0, 0);
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  background-color: #ccc;
-  padding: 10px 0;
-}
-
-.navLink {
-  color: #333;
-  text-decoration: none;
-  padding: 0 20px;
-  font-weight: bold;
-}
-
-.navLink:hover {
-  color: #fff;
-  background-color: rgb(161, 119, 234);
-}
-
-.activeNavLink {
-  color: #fff;
-  background-color: #333;
-}
-
 .main {
   flex: 1;
   padding: 20px;

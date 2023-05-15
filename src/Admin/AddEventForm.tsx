@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AddEventForm.css';
+import Header from './../Header';
+import Navigation from './navigation';
 
 type EventDetails = {
   event_id: string;
@@ -49,6 +51,8 @@ const AddEventForm: React.FC = () => {
   };
 
   return (
+    <div><Header title="ADD EVENT FORM" />
+    <Navigation /> 
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <div>
@@ -82,6 +86,7 @@ const AddEventForm: React.FC = () => {
         </div>
         <button type="submit">Add Event</button>
       </form>
+    </div>
     </div>
   );
 };

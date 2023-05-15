@@ -3,9 +3,9 @@ import axios from 'axios';
 import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
-import './UserDetailsTable.css';
-import focusFlow from "./focusFlow.png";
-import boschlogo from "./boschlogo.png";
+import './Table.css';
+import Header from './../Header';
+import Navigation from './navigation';
 
 type User = {
   NTID: string;
@@ -85,13 +85,9 @@ const UserDetailsTable = () => {
   };
 
   return (
+    <div><Header title="MANAGE USERS" />
+    <Navigation /> 
     <div className="container">
-      <div className="logo-container">
-      {/* <img src={boschlogo} alt="Bosch logo" className="logo" />  */}
-      <h1 className="title">MANAGE USERS</h1>
-      {/* <img src={focusFlow} alt="Focus Flow logo" className="logo" />  */}
-      </div>
-
       <div className="search-form">
         <label htmlFor="search-input">Search:</label>
         <input
@@ -144,6 +140,7 @@ const UserDetailsTable = () => {
           dataType="boolean"
        />
     </DataGrid>
+  </div>
   </div>
 );
 };

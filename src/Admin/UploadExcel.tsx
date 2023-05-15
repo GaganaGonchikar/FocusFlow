@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './UploadForm.css';
+import Header from './../Header';
+import Navigation from './navigation';
+
 
 const UploadForm: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -44,10 +47,12 @@ const UploadForm: React.FC = () => {
   }
 
   return (
+    <div><Header title="UPLOAD EVENT EXCEL" />
+    <Navigation /> 
     <div className="upload-form-container">
+      <div className='form-wrapper'>
       <form onSubmit={handleSubmit}>
-        <h2>Upload Event Data</h2>
-        <p>Select an Excel file (.xlsx) to upload:</p>
+        <h2>Select an Excel file (.xlsx) to upload:</h2>
         <div className="input-container">
           <input type="file" accept=".xlsx" onChange={handleFileSelect} />
           <button type="submit" disabled={!selectedFile}>
@@ -56,6 +61,8 @@ const UploadForm: React.FC = () => {
         </div>
       </form>
       <div className="upload-message-container">{uploadMessage}</div>
+    </div>
+    </div>
     </div>
   );
 };
