@@ -132,7 +132,7 @@ def fetch_event_by_id(cnxn, event_id):
     cursor.close()
     return row
 
-# Check if user is already registered for the event
+#for user registeration
 def is_registered_for_event(cnxn, event_id, NTID):
     cursor = cnxn.cursor()
     query = f"SELECT COUNT(*) FROM EventRegistration WHERE event_id = {event_id} AND NTID = '{NTID}';"
@@ -141,10 +141,9 @@ def is_registered_for_event(cnxn, event_id, NTID):
     cursor.close()
     return count > 0
 
-# Register user for the event
 def register_user_for_event(cnxn, event_id, NTID):
     cursor = cnxn.cursor()
-    query = f"INSERT INTO EventRegistration (event_id, NTID) VALUES ({event_id}, '{NTID}');"
+    query = f"INSERT INTO EventRegistration (NTID, event_id) VALUES ('{NTID}', {event_id});"
     cursor.execute(query)
     cnxn.commit()
     cursor.close()
@@ -173,3 +172,13 @@ def upcoming_events(cnxn, NTID):
         result = cursor.fetchall()
         cursor.close()
         return result
+
+#For the eventlist screen for user
+def get_event_details(engine, eventId):
+    query = f"SELECT * FROM Events WHERE event_id = '{eventId}'"
+    print(query)
+    df = pd.read_sql(query, engine)
+    if df.empty:
+        return None
+    event = df.to_dict(orient='records')[0]
+    return event

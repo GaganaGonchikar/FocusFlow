@@ -136,8 +136,10 @@ import { DataGrid, Column, Paging } from "devextreme-react/data-grid";
 import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
 import "./ParticipationHistory.css";
-import focusFlow from "./focusFlow.png";
-import boschlogo from "./boschlogo.png";
+import { FilterRow, HeaderFilter, SearchPanel } from "devextreme-react/data-grid";
+
+// import focusFlow from "./focusFlow.png";
+// import boschlogo from "./boschlogo.png";
 
 type Event = {
   event_id: string;
@@ -177,8 +179,8 @@ function ParticipationHistory() {
 
   return (
     <div className="ParticipationHistory-container">
-      <img src={focusFlow} alt="Focus Flow logo" className="ParticipationHistory-logo-right" />
-      <img src={boschlogo} alt="Bosch logo" className="ParticipationHistory-logo-left" />
+      {/* <img src={focusFlow} alt="Focus Flow logo" className="ParticipationHistory-logo-right" />
+      <img src={boschlogo} alt="Bosch logo" className="ParticipationHistory-logo-left" /> */}
       <h2>PARTICIPATION HISTORY</h2>
       <form onSubmit={handleSubmit} className="ParticipationHistory-form">
       <input
@@ -193,7 +195,7 @@ function ParticipationHistory() {
           Fetch Participation History
         </button>
       </form>
-      <DataGrid
+      {/* <DataGrid
         dataSource={participationHistory}
         className="ParticipationHistory-datagrid"
       >
@@ -203,7 +205,23 @@ function ParticipationHistory() {
         <Column dataField="event_location" caption="Event Location" />
         <Column dataField="event_description" caption="Event Description" />
         <Paging defaultPageSize={10} />
-      </DataGrid>
+      </DataGrid> */}
+      <DataGrid
+  dataSource={participationHistory}
+  className="ParticipationHistory-datagrid"
+>
+  <FilterRow visible={true} applyFilter="auto" />
+  <HeaderFilter visible={true} />
+  <SearchPanel visible={true} width={240} placeholder="Search..." />
+
+  <Column dataField="event_id" caption="Event ID" />
+  <Column dataField="event_name" caption="Event Name" />
+  <Column dataField="event_date" caption="Event Date" />
+  <Column dataField="event_location" caption="Event Location" />
+  <Column dataField="event_description" caption="Event Description" />
+  <Paging defaultPageSize={10} />
+</DataGrid>
+
     </div>
   );
 }

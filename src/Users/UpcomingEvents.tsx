@@ -86,8 +86,9 @@ import { DataGrid, Column, Paging } from "devextreme-react/data-grid";
 import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
 import "./UpcomingEvents.css";
-import focusFlow from "./focusFlow.png";
-import boschlogo from "./boschlogo.png";
+// import focusFlow from "./focusFlow.png";
+// import boschlogo from "./boschlogo.png";
+import { FilterRow, HeaderFilter, SearchPanel } from "devextreme-react/data-grid";
 
 type Event = {
   event_id: string;
@@ -127,8 +128,8 @@ function UpcomingEvents() {
 
   return (
     <div className="UpcomingEvents-container">
-      <img src={focusFlow} alt="Focus Flow logo" className="UpcomingEvents-logo-right" />
-      <img src={boschlogo} alt="Bosch logo" className="UpcomingEvents-logo-left" />
+      {/* <img src={focusFlow} alt="Focus Flow logo" className="UpcomingEvents-logo-right" />
+      <img src={boschlogo} alt="Bosch logo" className="UpcomingEvents-logo-left" /> */}
       <h2>UPCOMING EVENTS</h2>
       <form onSubmit={handleSubmit} className="UpcomingEvents-form">
       <input
@@ -143,7 +144,7 @@ function UpcomingEvents() {
           Fetch Upcoming Events
         </button>
       </form>
-      <DataGrid
+      {/* <DataGrid
         dataSource={upcomingEvents}
         className="UpcomingEvents-datagrid"
       >
@@ -153,7 +154,22 @@ function UpcomingEvents() {
         <Column dataField="event_location" caption="Event Location" />
         <Column dataField="event_description" caption="Event Description" />
         <Paging defaultPageSize={10} />
-      </DataGrid>
+      </DataGrid> */}
+      <DataGrid
+  dataSource={upcomingEvents}
+  className="ParticipationHistory-datagrid"
+>
+  <FilterRow visible={true} applyFilter="auto" />
+  <HeaderFilter visible={true} />
+  <SearchPanel visible={true} width={240} placeholder="Search..." />
+
+  <Column dataField="event_id" caption="Event ID" />
+  <Column dataField="event_name" caption="Event Name" />
+  <Column dataField="event_date" caption="Event Date" />
+  <Column dataField="event_location" caption="Event Location" />
+  <Column dataField="event_description" caption="Event Description" />
+  <Paging defaultPageSize={10} />
+</DataGrid>
     </div>
   );
 }

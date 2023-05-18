@@ -1,0 +1,23 @@
+/* PopularEvents.css */
+.popularevents-container {
+    margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
+    padding: 20px;
+  }
+.popular-events-container {
+    margin-top: 20px;
+  }
+  
+  .popular-event-item {
+    margin-bottom: 20px;
+  }
+  
+  .event-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  .event-details p {
+    margin-bottom: 5px;
+  }
+  

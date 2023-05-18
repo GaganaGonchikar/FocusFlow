@@ -983,3 +983,184 @@
 2023-05-05 10:15:41,819 [INFO] User GAGB1KOR has registered to these events
 2023-05-05 11:15:20,695 [INFO] User GAGB1KOR has registered to these events
 2023-05-05 11:15:30,277 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 15:36:26,800 [INFO] Event data imported successfully
+2023-05-05 15:36:36,682 [INFO] Event data fetched successfully
+2023-05-05 15:37:10,143 [INFO] User GAGB1KOR registered for event 5678
+2023-05-05 15:37:24,937 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 16:41:33,314 [INFO] Event data imported successfully
+2023-05-05 16:41:53,248 [INFO] Event data fetched successfully
+2023-05-05 16:43:59,222 [INFO] User GAGB1KOR registered for event 7891
+2023-05-05 16:44:20,127 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 16:50:35,514 [INFO] User GAGB1KOR has registered to these events
+2023-05-05 16:51:35,022 [INFO] User GAGB1KOR has registered to these events
+2023-05-11 11:05:20,159 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:05:20,590 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:05:24,115 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:05:24,774 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:05:25,239 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-11 11:05:25,239 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:05:25,626 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-11 11:06:07,826 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-11 11:06:07,826 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 12:14:49,903 [INFO] User GAGB1KOR has registered to these events
+2023-05-17 12:14:56,249 [INFO] Event data fetched successfully
+2023-05-17 12:14:56,490 [INFO] Event data fetched successfully
+2023-05-17 12:15:10,696 [INFO] Event data fetched successfully
+2023-05-17 12:15:10,761 [INFO] Event data fetched successfully
+2023-05-17 12:15:23,006 [INFO] Popular events fetched successfully
+2023-05-17 12:15:23,063 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 12:15:23,065 [INFO] Popular events fetched successfully
+2023-05-17 12:15:33,688 [INFO] Popular events fetched successfully
+2023-05-17 12:15:33,748 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 12:15:33,749 [INFO] Popular events fetched successfully
+2023-05-17 12:15:48,077 [INFO] Event data fetched successfully
+2023-05-17 12:15:48,136 [INFO] Event data fetched successfully
+2023-05-17 12:23:46,672 [INFO] Event data fetched successfully
+2023-05-17 12:23:46,740 [INFO] Event data fetched successfully
+2023-05-17 12:27:27,137 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 12:27:27,137 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 12:27:42,263 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 12:27:42,263 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 12:29:25,344 [INFO] Event data fetched successfully
+2023-05-17 12:29:25,414 [INFO] Event data fetched successfully
+2023-05-17 12:29:40,541 [INFO] Event data fetched successfully
+2023-05-17 12:29:40,640 [INFO] Event data fetched successfully
+2023-05-17 12:46:22,835 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:05:17,603 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:05:17,603 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:08:04,218 [INFO] Event data fetched successfully
+2023-05-17 13:08:04,290 [INFO] Event data fetched successfully
+2023-05-17 13:08:14,909 [INFO] Popular events fetched successfully
+2023-05-17 13:08:14,968 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:08:14,970 [INFO] Popular events fetched successfully
+2023-05-17 13:25:15,561 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:25:15,561 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:25:30,688 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:25:30,688 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:26:34,047 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:26:34,047 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:26:38,342 [INFO] Popular events fetched successfully
+2023-05-17 13:26:38,414 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:26:38,414 [INFO] Popular events fetched successfully
+2023-05-17 13:26:38,480 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:26:38,481 [INFO] Popular events fetched successfully
+2023-05-17 13:26:38,544 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:26:38,546 [INFO] Popular events fetched successfully
+2023-05-17 13:26:39,547 [INFO] Popular events fetched successfully
+2023-05-17 13:26:39,624 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:26:39,627 [INFO] Popular events fetched successfully
+2023-05-17 13:29:45,085 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:30:00,208 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:30:41,604 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:30:41,604 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:34:29,991 [INFO] Event data fetched successfully
+2023-05-17 13:34:30,068 [INFO] Event data fetched successfully
+2023-05-17 13:42:44,722 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:42:45,571 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-17 13:42:45,572 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:42:45,572 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:42:45,576 [INFO] Event data fetched successfully
+2023-05-17 13:43:56,938 [INFO] Event data fetched successfully
+2023-05-17 13:43:57,016 [INFO] Event data fetched successfully
+2023-05-17 13:44:18,918 [INFO] Event data fetched successfully
+2023-05-17 13:44:19,008 [INFO] Event data fetched successfully
+2023-05-17 13:44:21,733 [INFO] Event data fetched successfully
+2023-05-17 13:44:21,816 [INFO] Event data fetched successfully
+2023-05-17 13:44:32,687 [ERROR] name 'py_functions' is not defined
+2023-05-17 13:49:35,743 [INFO] Popular events fetched successfully
+2023-05-17 13:49:35,842 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:49:35,843 [INFO] Popular events fetched successfully
+2023-05-17 13:49:45,659 [INFO] Event data fetched successfully
+2023-05-17 13:49:45,750 [INFO] Event data fetched successfully
+2023-05-17 13:50:16,050 [INFO] User GAGB1KOR has registered to these events
+2023-05-17 13:50:20,644 [INFO] Event data fetched successfully
+2023-05-17 13:50:20,720 [INFO] Event data fetched successfully
+2023-05-17 13:50:34,006 [INFO] Event data fetched successfully
+2023-05-17 13:50:34,075 [INFO] Event data fetched successfully
+2023-05-17 13:50:44,355 [INFO] Event data fetched successfully
+2023-05-17 13:50:44,438 [INFO] Event data fetched successfully
+2023-05-17 13:51:16,390 [ERROR] name 'py_functions' is not defined
+2023-05-17 13:52:05,505 [INFO] Event data fetched successfully
+2023-05-17 13:52:05,590 [INFO] Event data fetched successfully
+2023-05-17 13:52:11,454 [INFO] User GAGB1KOR registered for event 1145
+2023-05-17 13:52:22,819 [INFO] User GAGB1KOR has registered to these events
+2023-05-17 13:52:31,402 [INFO] User GAGB1KOR has registered to these events
+2023-05-17 13:56:32,035 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-17 13:56:32,035 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: An established connection was aborted by the software in your host machine.\r\n (10053) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (10053)')
+2023-05-17 13:56:32,040 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2023-05-17 13:56:32,043 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2023-05-17 14:29:54,137 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:29:54,146 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:01,880 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:01,885 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:04,903 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:04,909 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:28,882 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-17 14:30:28,887 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:24,585 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:24,591 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:27,631 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:27,639 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:31,682 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:13:31,689 [ERROR] Execution failed on sql 'SELECT TOP 5 event_id, COUNT(*) AS registered_users FROM EventRegistration GROUP BY event_id ORDER BY registered_users DESC': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:20,067 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:20,077 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:25,957 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:25,966 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:31,339 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:31,355 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:37,495 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:37,502 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:42,702 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:42:42,711 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('IMC06', '[IMC06] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The connection is marked by the client driver as unrecoverable. No attempt was made to restore the connection. (0) (SQLExecDirectW)')
+2023-05-18 09:43:23,044 [INFO] Event data fetched successfully
+2023-05-18 09:43:23,116 [INFO] Event data fetched successfully
+2023-05-18 09:43:28,569 [INFO] Event data fetched successfully
+2023-05-18 09:43:28,655 [INFO] Event data fetched successfully
+2023-05-18 09:44:13,963 [INFO] Popular events fetched successfully
+2023-05-18 09:44:14,061 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-18 09:44:14,063 [INFO] Popular events fetched successfully
+2023-05-18 09:44:24,369 [INFO] Event data fetched successfully
+2023-05-18 09:44:24,452 [INFO] Event data fetched successfully
+2023-05-18 09:45:06,854 [INFO] Event data fetched successfully
+2023-05-18 09:45:07,132 [INFO] Event data fetched successfully
+2023-05-18 09:45:11,651 [INFO] Event data fetched successfully
+2023-05-18 09:45:11,746 [INFO] Event data fetched successfully
+2023-05-18 09:45:14,643 [INFO] Popular events fetched successfully
+2023-05-18 09:45:14,721 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-18 09:45:14,722 [INFO] Popular events fetched successfully
+2023-05-18 09:45:23,104 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 09:45:31,480 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 09:47:14,857 [INFO] Event data fetched successfully
+2023-05-18 09:47:14,937 [INFO] Event data fetched successfully
+2023-05-18 09:47:34,937 [INFO] Event data fetched successfully
+2023-05-18 09:47:35,017 [INFO] Event data fetched successfully
+2023-05-18 09:47:46,989 [INFO] Popular events fetched successfully
+2023-05-18 09:47:47,056 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-18 09:47:47,057 [INFO] Popular events fetched successfully
+2023-05-18 09:47:54,484 [INFO] Popular events fetched successfully
+2023-05-18 09:47:54,569 [ERROR] Execution failed on sql 'SELECT * FROM Events WHERE event_id = '1091'': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-18 09:47:54,572 [INFO] Popular events fetched successfully
+2023-05-18 09:48:16,978 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 09:48:32,216 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 09:49:23,130 [INFO] Event data fetched successfully
+2023-05-18 09:49:23,225 [INFO] Event data fetched successfully
+2023-05-18 09:58:54,372 [INFO] Event data fetched successfully
+2023-05-18 09:58:54,462 [INFO] Event data fetched successfully
+2023-05-18 10:07:39,016 [INFO] Event data fetched successfully
+2023-05-18 10:07:39,092 [INFO] Event data fetched successfully
+2023-05-18 10:08:12,038 [INFO] Event data fetched successfully
+2023-05-18 10:08:12,099 [INFO] Event data fetched successfully
+2023-05-18 10:09:40,145 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 10:09:55,075 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 10:13:59,294 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 10:14:27,086 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 10:16:05,754 [INFO] User GAGB1KOR has registered to these events
+2023-05-18 10:16:20,433 [INFO] Event data fetched successfully
+2023-05-18 10:16:20,512 [INFO] Event data fetched successfully
+2023-05-18 11:06:11,616 [INFO] Event data fetched successfully
+2023-05-18 11:06:11,694 [INFO] Event data fetched successfully
+2023-05-18 11:06:50,094 [INFO] Event data fetched successfully
+2023-05-18 11:06:50,177 [INFO] Event data fetched successfully
+2023-05-18 11:07:40,180 [INFO] Event data fetched successfully
+2023-05-18 11:07:40,247 [INFO] Event data fetched successfully

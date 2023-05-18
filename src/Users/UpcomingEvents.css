@@ -1,184 +1,82 @@
-.UpcomingEvents {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  
-  h1 {
-    text-align: center;
-    background-color: #ad60c5;
-    padding: 10px;
-  }
-  
-  
-  
-  .UpcomingEvents form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-  
-  .UpcomingEvents label {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .UpcomingEvents input[type="text"] {
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px #ccc;
-    margin-bottom: 20px;
-  }
-  
-  .UpcomingEvents button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .UpcomingEvents button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  .dx-datagrid {
-    font-size: 16px;
-  }
-  
-  .dx-datagrid-header-panel {
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .dx-datagrid-header-panel .dx-toolbar-items-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .dx-datagrid-header-panel .dx-toolbar-label {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .dx-datagrid-headers {
-    background-color: #ad60c5;
-    color: white;
-  }
-  
-  .dx-datagrid-rowsview {
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
-  }
-  
-  input[type="text"] {
-    padding: 8px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  .UpcomingEvents-input {
-    margin-right: 10px;
-  }
-  
-  .UpcomingEvents-button {
-    margin-left: 10px;
-  }
-  
-  .UpcomingEvents-form {
-    margin-bottom: 0px;
-  }
-  
-  .UpcomingEvents-datagrid {
-    margin-top: 25px;
-  }
-  
-  
-  .UpcomingEvents-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* border: 2px solid #ccc; */
-    padding: 20px;
-  }
-  
-  .UpcomingEvents-datagrid {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-  }
-  
-  .dx-datagrid-header-panel {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .dx-datagrid-rowsview {
-    border-top: 1px solid #ccc;
-  }
-  h2 {
-    text-align: center;
-    background-color: #ad60c5;
-    padding: 10px;
-    color: white;
-    font-size: 25px;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px #333;
-  }
-  
-  body {
-    background-color: #dccbcb !important;
-  }
-  
-  .UpcomingEvents-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .UpcomingEvents-logo-left {
-    position: absolute;
-    margin-bottom: 100 px;
-    left: 50px;
-    top: 33px;
-    width: 120px;
-    height: px;
-  }
-  
-  .UpcomingEvents-logo-right {
-    position: absolute;
-    margin-bottom: 100px;
-    right: 60px;
-    top: 40px;
-    width: 90px;
-    height: px;
-  }
-  
-  
-  .UpcomingEvents-datagrid {
-    margin-top: 10px;
-  }
+.UpcomingEvents-container {
+  margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
+  padding: 20px;
+}
+
+.UpcomingEvents-logo-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.UpcomingEvents-logo-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.UpcomingEvents-form {
+  margin-bottom: 20px;
+}
+
+.UpcomingEvents-input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.UpcomingEvents-button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.UpcomingEvents-datagrid {
+  height: calc(100vh - 200px); /* Adjust the height based on your layout */
+}
+
+.dx-datagrid {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+
+.dx-datagrid-header-panel {
+  background-color: #ccc;
+}
+
+.dx-datagrid-rowsview {
+  background-color: #fff;
+}
+
+.dx-datagrid-row {
+  background-color: #f8f8f8;
+}
+
+.dx-datagrid-row-alt {
+  background-color: #f2f2f2;
+}
+
+.dx-datagrid-column-headers .dx-datagrid-header-row {
+  background-color: #e6e6e6;
+}
+
+.dx-datagrid-column-headers .dx-datagrid-header-row .dx-datagrid-text-content {
+  color: #000;
+}
+
+.dx-datagrid .dx-row-lines {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.dx-datagrid .dx-data-row .dx-row-lines {
+  border-top: none;
+}
+
+
   

@@ -1,190 +1,46 @@
-.ParticipationHistory {
-  max-width: 800px;
-  margin: 0 auto;
+/* ParticipationHistory.css */
+
+.ParticipationHistory-container {
+  margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
-
-h1 {
-  text-align: center;
-  background-color: #ad60c5;
-  padding: 10px;
+.ParticipationHistory-logo-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
 }
 
-
-
-.ParticipationHistory form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
+.ParticipationHistory-logo-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
 }
 
-.ParticipationHistory label {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.ParticipationHistory input[type="text"] {
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px #ccc;
+.ParticipationHistory-form {
   margin-bottom: 20px;
 }
 
-.ParticipationHistory button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.ParticipationHistory button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
-
-.dx-datagrid {
-  font-size: 16px;
-}
-
-.dx-datagrid-header-panel {
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.dx-datagrid-header-panel .dx-toolbar-items-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dx-datagrid-header-panel .dx-toolbar-label {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.dx-datagrid-headers {
-  background-color: #ad60c5;
-  color: white;
-}
-
-.dx-datagrid-rowsview {
-  border-radius: 5px;
-  box-shadow: 0 0 5px #ccc;
-}
-
-input[type="text"] {
-  padding: 8px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
 .ParticipationHistory-input {
+  padding: 10px;
   margin-right: 10px;
 }
 
 .ParticipationHistory-button {
-  margin-left: 10px;
-}
-
-.ParticipationHistory-form {
-  margin-bottom: 0px;
-}
-
-.ParticipationHistory-datagrid {
-  margin-top: 20px;
-}
-
-/* .ParticipationHistory-datagrid {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid rgb(96, 91, 91);
-}
-
-.ParticipationHistory-datagrid td,
-.ParticipationHistory-datagrid th {
-  border: 1px solid rgb(96, 91, 91);
-  padding: 8px;
-} */
-
-.ParticipationHistory-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* border: 2px solid #ccc; */
-  padding: 20px;
+  padding: 10px 20px;
+  background-color: #080808;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .ParticipationHistory-datagrid {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
+  height: calc(100vh - 200px); /* Adjust the height based on your layout */
 }
 
-.dx-datagrid-header-panel {
-  border-bottom: 1px solid #ccc;
-}
 
-.dx-datagrid-rowsview {
-  border-top: 1px solid #ccc;
-}
-h2 {
-  text-align: center;
-  background-color: #ad60c5;
-  padding: 10px;
-  color: white;
-  font-size: 25px;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px #333;
-}
-
-body {
-  background-color: #dccbcb !important;
-}
-
-.ParticipationHistory-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ParticipationHistory-logo-left {
-  position: absolute;
-  margin-bottom: 100 px;
-  left: 50px;
-  top: 33px;
-  width: 120px;
-  height: px;
-}
-
-.ParticipationHistory-logo-right {
-  position: absolute;
-  margin-bottom: 100px;
-  right: 60px;
-  top: 40px;
-  width: 90px;
-  height: px;
-}
 

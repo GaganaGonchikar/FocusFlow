@@ -1,0 +1,68 @@
+/* eventlist.css */
+
+.eventlist-container {
+    margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
+    padding: 20px;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-form label {
+    margin-right: 10px;
+  }
+  
+  .search-form input {
+    padding: 5px;
+    width: 300px;
+  }
+  
+  .filter-form {
+    margin-top: 10px;
+  }
+  
+  .filter-form label {
+    margin-right: 10px;
+  }
+  
+  .data-grid-container {
+    height: 400px;
+  }
+  
+  .dx-datagrid {
+    font-size: 14px;
+  }
+  
+  .dx-row-alt {
+    background-color: #f2f2f2;
+  }
+  
+  .dx-row:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .dx-button {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .dx-button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .dx-row .dx-button {
+    margin-left: 5px;
+  }
+  
+  .dx-pager {
+    margin-top: 10px;
+  }
+  
+  .dx-pager .dx-button {
+    margin: 0 2px;
+  }
+  
