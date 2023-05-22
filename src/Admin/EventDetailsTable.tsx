@@ -77,9 +77,13 @@ const EventDetailsTable = () => {
     }
   };
 
-  const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
-    setFilterQuery(selectedOptions);
+  const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    if (event.target.checked) {
+      setFilterQuery((prevFilterQuery) => [...prevFilterQuery, value]);
+    } else {
+      setFilterQuery((prevFilterQuery) => prevFilterQuery.filter((item) => item !== value));
+    }
   };
 
   const filteredEventDetails = eventDetails.filter((event) => {
@@ -87,14 +91,15 @@ const EventDetailsTable = () => {
     const isCategoryMatch = filterQuery.length === 0 || filterQuery.includes(event.type_of_event);
     return isMatch && isCategoryMatch;
   });
-
+  
   const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
   
   return (
-    <div><Header title="MANAGE EVENTS" />
-    <Navigation /> 
-    <div className="container">
-      <div className="search-form">
+  <div>
+  <Header title="MANAGE EVENTS" />
+  <Navigation />
+  <div className="container">
+  <div className="search-form">
   <label htmlFor="search-input">Search:</label>
   <input
     id="search-input"
@@ -103,48 +108,49 @@ const EventDetailsTable = () => {
     onChange={handleSearch}
     placeholder="Search by NTID/First Name/Last Name/Email or Location"
   />
+  </div>
+  <div className="filter-form">
   <label htmlFor="filter-select">Filter by Type:</label>
-<select id="filter-select" value={filterQuery} onChange={handleFilter} multiple>
-  <option value="">All</option>
-  {uniqueTypes.map(type => (
-    <option key={type} value={type}>{type}</option>
-  ))}
-</select>
-
-
+  <div className="checkbox-container">
+    {uniqueTypes.map((type) => (
+      <div className="checkbox-item" key={type}>
+        <input
+          type="checkbox"
+          id={type}
+          value={type}
+          checked={filterQuery.includes(type)}
+          onChange={handleFilter}
+        />
+        <label htmlFor={type}>{type}</label>
+      </div>
+    ))}
+  </div>
 </div>
-
-      
-      <DataGrid
-        dataSource={filteredEventDetails}
-        showBorders={true}
-        allowColumnResizing={true}
-        allowColumnReordering={true}
-        rowAlternationEnabled={true}
-        hoverStateEnabled={true}
-        remoteOperations={true}
-        keyExpr="event_id"
-        wordWrapEnabled={true}
-        onRowUpdating={handleRowUpdating}
-        onRowRemoving={handleRowRemoving}  
-      >
-      <Editing
-        mode={editingEnabled ? 'row' : 'none'}
-        allowUpdating={true}
-        allowDeleting={true}
-        useIcons={true}
-      />
-      <Paging enabled={true} pageSize={10}  />
-      <Column dataField="event_id" caption="ID"  />
+  <DataGrid
+      dataSource={filteredEventDetails}
+      showBorders={true}
+      allowColumnResizing={true}
+      allowColumnReordering={true}
+      rowAlternationEnabled={true}
+      hoverStateEnabled={true}
+      remoteOperations={true}
+      keyExpr="event_id"
+      wordWrapEnabled={true}
+      onRowUpdating={handleRowUpdating}
+      onRowRemoving={handleRowRemoving}
+    >
+      <Editing mode={editingEnabled ? 'row' : 'none'} allowUpdating={true} allowDeleting={true} useIcons={true} />
+      <Paging enabled={true} pageSize={10} />
+      <Column dataField="event_id" caption="ID" />
       <Column dataField="event_name" caption="Name" />
       <Column dataField="event_location" caption="Location" />
       <Column dataField="event_description" caption="Description" />
       <Column dataField="event_date" caption="Date" />
       <Column dataField="type_of_event" caption="Category" />
-      </DataGrid>
+    </DataGrid>
   </div>
-  </div>
- );
+</div>
+);
 };
 
 export default EventDetailsTable;

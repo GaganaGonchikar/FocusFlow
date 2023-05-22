@@ -175,3 +175,21 @@ input[type="text"]:focus {
   text-align: center;
   flex: 2;
 }
+
+
+.filter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust spacing between checkbox items */
+}

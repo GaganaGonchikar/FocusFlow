@@ -84,6 +84,7 @@ const UserDetailsTable = () => {
     }
   };
 
+  
   return (
     <div><Header title="MANAGE USERS" />
     <Navigation /> 
@@ -136,7 +137,6 @@ const UserDetailsTable = () => {
           <Column
           dataField="approved"
           caption="Approved"
-          width={100}
           dataType="boolean"
        />
     </DataGrid>

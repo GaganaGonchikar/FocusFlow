@@ -50,7 +50,7 @@ const UploadForm: React.FC = () => {
     <div><Header title="UPLOAD EVENT EXCEL" />
     <Navigation /> 
     <div className="upload-form-container">
-      <div className='form-wrapper'>
+      <div className='form-wrapper2'>
       <form onSubmit={handleSubmit}>
         <h2>Select an Excel file (.xlsx) to upload:</h2>
         <div className="input-container">
