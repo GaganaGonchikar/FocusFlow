@@ -5,7 +5,6 @@ import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import Header from './../Header';
 
-
 type EventDetails = {
   event_id: string;
   event_name: string;
@@ -20,6 +19,7 @@ const eventlist = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [editingEnabled, setEditingEnabled] = useState(false);
   const [filterQuery, setFilterQuery] = useState<string[]>([]);
+  const [filters, setFilters] = useState<string[]>([]);
 
   useEffect(() => {
     axios.get<EventDetails[]>('http://127.0.0.1:8000/event-data').then((response) => {
@@ -46,7 +46,6 @@ const eventlist = () => {
     setFilterQuery(selectedOptions);
   };
 
-
   const handleRegister = (event_id: string) => {
     const ntid = prompt('Enter NTID:');
     if (ntid) {
@@ -65,7 +64,6 @@ const eventlist = () => {
   const RegisterButton = ({ data }: { data: EventDetails }) => {
     return <button onClick={() => handleRegister(data.event_id)}>Register</button>;
   };
-  const [filters, setFilters] = useState<string[]>([]);
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -75,31 +73,35 @@ const eventlist = () => {
       setFilters(filters.filter((filter) => filter !== value));
     }
   };
-  
+
   const filteredEventDetails = eventDetails.filter((event) => {
     const isMatch = searchEvent(event, searchQuery);
     const isCategoryMatch = filters.length === 0 || filters.includes(event.type_of_event);
     return isMatch && isCategoryMatch;
   });
-  
+
   const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
+
   return (
     <div>
       <Header title="EVENT LIST" />
-    <div className="container">
-      <div className="search-form">
-        <label htmlFor="search-input">Search:</label>
-        <input
-          id="search-input"
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="Search by NTID/First Name/Last Name/Email or Location"
-        />
-  <div className="filter-form">
-    <label htmlFor="filter-select">Filter by Type:</label>
+      <div className="container">
+        <div className="search-form">
+          <label htmlFor="search-input">Search:</label>
+          <input
+            id="search-input"
+            type="text"
+            value={searchQuery}
+            onChange={handleSearch}
+            placeholder="Search by NTID/First Name/Last Name/Email or Location"
+          />
+        </div>
+    
+        <div className="filter-form">
+  <label htmlFor="filter-select">Filter by Type:</label>
+  <div className="checkbox-container">
     {uniqueTypes.map((type) => (
-      <div key={type}>
+      <div className="checkbox-item" key={type}>
         <input
           type="checkbox"
           id={type}
@@ -111,52 +113,52 @@ const eventlist = () => {
       </div>
     ))}
   </div>
-
 </div>
 
-<DataGrid
-  dataSource={filteredEventDetails}
-  showBorders={true}
-  allowColumnResizing={true}
-  allowColumnReordering={true}
-  rowAlternationEnabled={true}
-  hoverStateEnabled={true}
-  remoteOperations={true}
-  keyExpr="event_id"
-  wordWrapEnabled={true}
->
 
-  <Paging enabled={true} pageSize={10} />
-  <Column dataField="event_id" caption="ID" />
-  <Column dataField="event_name" caption="Name" />
-  <Column dataField="event_location" caption="Location" />
-  <Column dataField="event_description" caption="Description" />
-  <Column dataField="event_date" caption="Date" />
-  <Column dataField="type_of_event" caption="Category" />
-  <Editing
-    mode="form"
-    allowUpdating={editingEnabled}
-    allowDeleting={editingEnabled}
-    allowAdding={editingEnabled}
-    useIcons={true}
-  />
-  <Column
-    caption="Register"
-    type="buttons"
-    width={110}
-    buttons={[
-      {
-        hint: 'Register',
-        icon: 'add',
-        visible: true,
-        onClick: (e: any) => handleRegister(e.row.data.event_id),
-      },
-    ]}
-  />
-</DataGrid>
-
-  </div>
-  </div>
+    
+        <DataGrid
+          dataSource={filteredEventDetails}
+          showBorders={true}
+          allowColumnResizing={true}
+          allowColumnReordering={true}
+          rowAlternationEnabled={true}
+          hoverStateEnabled={true}
+          remoteOperations={true}
+          keyExpr="event_id"
+          wordWrapEnabled={true}
+        >
+          <Paging enabled={true} pageSize={10} />
+          <Column dataField="event_id" caption="ID" />
+          <Column dataField="event_name" caption="Name" />
+          <Column dataField="event_location" caption="Location" />
+          <Column dataField="event_description" caption="Description" />
+          <Column dataField="event_date" caption="Date" />
+          <Column dataField="type_of_event" caption="Category" />
+          <Editing
+            mode="form"
+            allowUpdating={editingEnabled}
+            allowDeleting={editingEnabled}
+            allowAdding={editingEnabled}
+            useIcons={true}
+          />
+          <Column
+            caption="Register"
+            type="buttons"
+            width={110}
+            buttons={[
+              {
+                hint: 'Register',
+                icon: 'add',
+                visible: true,
+                onClick: (e: any) => handleRegister(e.row.data.event_id),
+              },
+            ]}
+          />
+        </DataGrid>
+      </div>
+    </div>
+    
  );
 };
 
