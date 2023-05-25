@@ -166,7 +166,7 @@ function ParticipationHistory() {
         `http://127.0.0.1:8000/participation-history/${NTID}`
       );
       setParticipationHistory(data.participation_history);
-      window.alert("Participation history fetched successfully.");
+      // window.alert("Participation history fetched successfully.");
     } catch (error) {
       console.error(error);
       window.alert(

@@ -1,23 +1,33 @@
-/* PopularEvents.css */
-.popularevents-container {
-    margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
-    padding: 20px;
-  }
-.popular-events-container {
-    margin-top: 20px;
-  }
-  
-  .popular-event-item {
-    margin-bottom: 20px;
-  }
-  
-  .event-details {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f2f2f2;
-  }
-  
-  .event-details p {
-    margin-bottom: 5px;
-  }
-  
+.table-container {
+  margin-left: 200px; /* Adjust the margin value to match the width of the sidebar */
+  padding: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.event-table th,
+.event-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.event-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.event-table td {
+  text-align: left;
+}
+
+.event-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,163 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { DataGrid, Column, Editing, Paging, FilterRow, HeaderFilter, SearchPanel } from 'devextreme-react/data-grid';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+import './Table.css';
+// import focusFlow from "./focuflow.svg";
+// import boschlogo from "./boschlogo.png";
+
+
+type EventDetails = {
+  event_id: string;
+  event_name: string;
+  event_location: string;
+  event_description: string;
+  event_date: string;
+  type_of_event: string;
+};
+
+const EventDetailsTable = () => {
+  const [eventDetails, setEventDetails] = useState<EventDetails[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [editingEnabled, setEditingEnabled] = useState(false);
+  const [filterQuery, setFilterQuery] = useState<string[]>([]);
+
+  useEffect(() => {
+    axios.get<EventDetails[]>('http://127.0.0.1:8000/event-data').then((response) => {
+      setEventDetails(response.data);
+    });
+  }, []);
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleEditEnabled = () => {
+    setEditingEnabled(!editingEnabled);
+  };
+
+  const searchEvent = (event: EventDetails, query: string) => {
+    return (
+      event.event_id.toLowerCase().includes(query.toLowerCase()) ||
+      event.event_name.toLowerCase().includes(query.toLowerCase()) ||
+      event.event_location.toLowerCase().includes(query.toLowerCase()) ||
+      event.event_description.toLowerCase().includes(query.toLowerCase()) ||
+      event.event_date.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
+  const handleRowUpdating = async (e: any) => {
+    const updatedEvent = { ...e.oldData, ...e.newData };
+    try {
+      const queryParams = new URLSearchParams({
+        event_id: updatedEvent.event_id,
+        event_name: updatedEvent.event_name,
+        event_location: updatedEvent.event_location,
+        event_description: updatedEvent.event_description,
+        event_date: updatedEvent.event_date,
+        type_of_event: updatedEvent.type_of_event,
+      }).toString();
+
+      await axios.put(`http://127.0.0.1:8000/update-event-details/${updatedEvent.event_id}?${queryParams}`);
+      alert('Event details updated successfully');
+    } catch (error) {
+      alert('Could not update user details');
+    }
+  };
+
+  const handleRowRemoving = async (e: any) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/delete-event/${e.data.event_id}`);
+      setEventDetails((prevEventDetails) =>
+        prevEventDetails.filter((event) => event.event_id !== e.data.event_id)
+      );
+      alert('Event deleted successfully');
+    } catch (error) {
+      alert('Could not delete event');
+    }
+  };
+
+  const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    if (event.target.checked) {
+      setFilterQuery((prevFilterQuery) => [...prevFilterQuery, value]);
+    } else {
+      setFilterQuery((prevFilterQuery) => prevFilterQuery.filter((item) => item !== value));
+    }
+  };
+
+  const filteredEventDetails = eventDetails.filter((event) => {
+    const isMatch = searchEvent(event, searchQuery);
+    const isCategoryMatch = filterQuery.length === 0 || filterQuery.includes(event.type_of_event);
+    return isMatch && isCategoryMatch;
+  });
+  
+  const uniqueTypes = Array.from(new Set(eventDetails.map((event) => event.type_of_event)));
+  
+  return (
+  <div>
+  {/* <Header title="MANAGE EVENTS" /> */}
+  {/* <Navigation /> */}
+  <div className="container">
+  <div className="search-form">
+  <label htmlFor="search-input">Search:</label>
+  <input
+    id="search-input"
+    type="text"
+    value={searchQuery}
+    onChange={handleSearch}
+    placeholder="Search by NTID/First Name/Last Name/Email or Location"
+  />
+  </div>
+  <div className="filter-form">
+  <label htmlFor="filter-select">Filter by Type:</label>
+  <div className="checkbox-container">
+    {uniqueTypes.map((type) => (
+      <div className="checkbox-item" key={type}>
+        <input
+          type="checkbox"
+          id={type}
+          value={type}
+          checked={filterQuery.includes(type)}
+          onChange={handleFilter}
+        />
+        <label htmlFor={type}>{type}</label>
+      </div>
+    ))}
+  </div>
+</div>
+  <DataGrid
+      dataSource={filteredEventDetails}
+      showBorders={true}
+      allowColumnResizing={true}
+      allowColumnReordering={true}
+      rowAlternationEnabled={true}
+      hoverStateEnabled={true}
+      remoteOperations={true}
+      keyExpr="event_id"
+      wordWrapEnabled={true}
+      onRowUpdating={handleRowUpdating}
+      onRowRemoving={handleRowRemoving}
+    >
+      <Editing mode={editingEnabled ? 'row' : 'none'} allowUpdating={true} allowDeleting={true} useIcons={true} />
+      <Paging enabled={true} pageSize={10} />
+      <FilterRow visible={true} applyFilter="auto" />
+          <HeaderFilter visible={true} />
+          <SearchPanel visible={true} width={240} placeholder="Search..." />
+      <Column dataField="event_id" caption="ID" />
+      <Column dataField="event_name" caption="Name" />
+      <Column dataField="event_location" caption="Location" />
+      <Column dataField="event_description" caption="Description" />
+      <Column dataField="event_date" caption="Date" />
+      <Column dataField="type_of_event" caption="Category" />
+    </DataGrid>
+  </div>
+</div>
+);
+};
+
+export default EventDetailsTable;
+
+
+

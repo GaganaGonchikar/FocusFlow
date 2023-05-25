@@ -1,59 +1,12 @@
-// import React from 'react';
-// import { Link, Route, Switch } from 'wouter';
-// import ManageEvents from './ManageEventsScreen';
-// import { AddEventForm } from './AddEventsForm';
-// import './AdminDashboard.css';
-// import focusFlow from "./focuflow.svg";
-// import boschlogo from "./boschlogo.png";
-
-// const AdminDashboard: React.FC = () => {
-//   return (
-//     <div className="admin-dashboard">
-//       <div className="logo-container1">
-//         <img src={boschlogo} alt="Bosch logo" className="logo" />
-//         <h1 className="title">ADMIN DASHBOARD</h1>
-//         <img src={focusFlow} alt="Focus Flow logo" className="logo1" />
-//       </div>
-//       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-//         <ul className="navbar-nav mr-auto">
-//           <li className="nav-item">
-//             <Link href="/manage-events" className="nav-link">
-//               Manage Events
-//             </Link>
-//           </li>
-//           <li className="nav-item">
-//             <Link href="/add-event" className="nav-link">
-//               Add Event
-//             </Link>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       <div className="container-fluid">
-//         <div className="row justify-content-center">
-//           <div className="col-md-8">
-//             <Switch>
-//               <Route path="/manage-events" component={ManageEvents} />
-//               <Route path="/add-event" component={AddEventForm} />
-//             </Switch>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AdminDashboard;
-
-
 import React from 'react';
 import { Link, Route, Switch } from 'wouter';
 import ManageEvents from './ManageEventsScreen';
 import ManageUsers from './ManageUserScreen';
 import  AddEventForm  from './AddEventsForm';
+import UploadExcel from './UploadExcel'
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
-import focusFlow from "./focuflow.svg";
+import focusFlow from "./BOSCHEngage.png";
 import boschlogo from "./boschlogo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -112,6 +65,9 @@ const AdminDashboard: React.FC = () => {
           <Button component={Link} to="/manage-users" className={classes.navLink} activeClassName={classes.activeNavLink}>
             Manage Users
           </Button>
+          <Button component={Link} to="/upload-excel" className={classes.navLink} activeClassName={classes.activeNavLink}>
+            Upload Excel
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -122,6 +78,7 @@ const AdminDashboard: React.FC = () => {
               <Route path="/manage-events" component={ManageEvents} />
               <Route path="/add-event" component={AddEventForm} />
               <Route path="/manage-users" component={ManageUsers} />
+              <Route path="/upload-excel" component={UploadExcel} />
             </Switch>
           </div>
         </div>

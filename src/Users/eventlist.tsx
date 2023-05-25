@@ -99,10 +99,11 @@ const eventlist = () => {
           onChange={handleSearch}
           placeholder="Search by NTID/First Name/Last Name/Email or Location"
         />
-  <div className="filter-form">
-    <label htmlFor="filter-select">Filter by Type:</label>
+ {/* <div className="filter-form">
+  <label htmlFor="filter-select">Filter by Type:</label>
+  <div className="checkbox-container">
     {uniqueTypes.map((type) => (
-      <div key={type}>
+      <div className="checkbox-item" key={type}>
         <input
           type="checkbox"
           id={type}
@@ -113,9 +114,11 @@ const eventlist = () => {
         <label htmlFor={type}>{type}</label>
       </div>
     ))}
-  </div>
+  </div> */}
+{/* </div> */}
 
 </div>
+
 
 <DataGrid
   dataSource={filteredEventDetails}

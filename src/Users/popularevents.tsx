@@ -1,74 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import Header from './../Header';
-import "./popularevents.css";
+import './popularevents.css';
 
-interface PopularEvent {
-  event_id: string;
-  registered_users: number;
-}
 
 interface Event {
-  id: string;
-  name: string;
-  date: string;
-  location: string;
-  description: string;
+  event_id: number;
+  registered_users: number;
+  event_name: string;
+  event_date: string;
+  event_location: string;
+  event_description: string;
 }
 
 const PopularEvents: React.FC = () => {
-  const [popularEvents, setPopularEvents] = useState<PopularEvent[]>([]);
-  const [eventDetails, setEventDetails] = useState<Record<string, Event>>({});
+  const [popularEvents, setPopularEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    const fetchPopularEvents = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/popular-events/');
-        const popularEvents = response.data;
-        for (const event of popularEvents) {
-          const eventDetailResponse = await axios.get(`http://127.0.0.1:8000/event-details/${event.event_id}`);
-          const eventDetail: Event = eventDetailResponse.data;
-          setEventDetails((prevEventDetails) => ({
-            ...prevEventDetails,
-            [event.event_id]: eventDetail,
-          }));
-        }
-        setPopularEvents(popularEvents);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    
-
     fetchPopularEvents();
   }, []);
 
- 
-
+  const fetchPopularEvents = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/popular-events/');
+      if (!response.ok) {
+        throw new Error('Failed to fetch popular events');
+      }
+      const data = await response.json();
+      setPopularEvents(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
       {/* <Header title="POPULAR EVENTS" /> */}
-      <div className="popularevents-container">
-      <ul>
-        {popularEvents.map((event) => (
-          <li>
-            <p>Event ID: {event.event_id}</p>
-            <p>Number of Registrations: {event.registered_users}</p>
-            {/* display event details if available */}
-            {eventDetails[event.event_id] ? (
-              <>
-                <p>Event Name: {eventDetails[event.event_id].name}</p>
-                <p>Event Date: {eventDetails[event.event_id].date}</p>
-                <p>Event Location: {eventDetails[event.event_id].location}</p>
-                <p>Event Description: {eventDetails[event.event_id].description}</p>
-              </>
-            ) : (
-              <p>Click to load event details</p>
-            )}
-          </li>
-        ))}
-      </ul>
+      <div className="table-container">
+        <table className="event-table">
+          <thead>
+            <tr>
+              <th>Event ID</th>
+              <th>Event Name</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>Registered Users</th>
+            </tr>
+          </thead>
+          <tbody>
+            {popularEvents.map((event) => (
+              <tr key={event.event_id}>
+                <td>{event.event_id}</td>
+                <td>{event.event_name}</td>
+                <td>{event.event_date}</td>
+                <td>{event.event_location}</td>
+                <td>{event.event_description}</td>
+                <td>{event.registered_users}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );

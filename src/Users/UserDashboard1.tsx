@@ -9,7 +9,7 @@ const UserDashboard = () => {
         {/* <Header title="USER DASHBOARD" /> */}
         
     <div className="dashboard-container">
-    <h1>USER DASHBOARD</h1>
+    {/* <h1>USER DASHBOARD</h1> */}
       <div className="dashboard-tiles-container">
         <Link href="/userevent-list" className="dashboard-tile">
           <h3 className="dashboard-tile-title">Event</h3>

@@ -15,6 +15,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.responses import JSONResponse
 import pandas as pd
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+from io import BytesIO
 
 # import py_functions
 
@@ -98,7 +101,7 @@ def login(username: str, password: str):
 
 
 # Define endpoints
-@app.get('/user-list/')
+@app.get('/user-data/')
 def get_user_data():
     try:
         df = py_functions1.fetch_userdata(cnxn)
@@ -129,14 +132,23 @@ def delete_event(NTID: str):
     return {'message': 'User deleted successfully'}
 
 @app.post('/import-event-data')
-def import_event_data():
+async def import_event_data(file: UploadFile = File(...)):
     try:
-        py_functions1.import_eventdata(cnxn)
+        content = await file.read() # Read the file data from the request body
+        df = pd.read_excel(BytesIO(content)) # Read the data from the Excel file into a DataFrame
+        cursor = cnxn.cursor()
+        for index, row in df.iterrows():
+            event_id = row['event_id']
+            cursor.execute("SELECT COUNT(*) FROM Events WHERE event_id = ?", event_id)
+            count = cursor.fetchone()[0]
+            if count == 0:
+                cursor.execute("INSERT INTO Events (event_name, event_date, event_location, event_description, event_id) VALUES (?, ?, ?, ?, ?);", row['event_name'], row['event_date'], row['event_location'], row['event_description'], event_id)
+        cursor.commit()
         logging.info('Event data imported successfully')
-        return {'message': 'Event data imported successfully'}
+        return JSONResponse(content={"message": "Event data imported successfully"})
     except Exception as e:
         logging.error(str(e))
-        return {'message': f'Error importing event data: {str(e)}'}
+        return JSONResponse(content={"message": f'Error importing event data: {str(e)}'})
 
     
 
@@ -327,6 +339,15 @@ def get_event_details(eventId: str):
     except Exception as e:
         logging.error(str(e))
         raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+@app.post("/questionnaire")
+def submit_answers(NTID: str,interests: str,events: str,days: str):
+    try:
+        py_functions1.submit_questionnaire(cnxn, NTID, interests, events,days)
+        return JSONResponse(content={"message": "Noted - we'll tailor your experience to your preferences!"})
+    except Exception as e:
+        return JSONResponse(content={"message": f"Error: {str(e)}"}, status_code=500)
 
 # Run the app
 if __name__ == "__main__":

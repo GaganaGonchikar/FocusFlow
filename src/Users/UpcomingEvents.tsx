@@ -115,7 +115,7 @@ function UpcomingEvents() {
         `http://127.0.0.1:8000/upcoming-events/${NTID}`
       );
       setUpcomingEvents(data.upcoming_events);
-      window.alert("Upcoming events fetched successfully.");
+      // window.alert("Upcoming events fetched successfully.");
     } catch (error) {
       console.error(error);
       window.alert(

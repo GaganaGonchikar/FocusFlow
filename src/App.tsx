@@ -1,6 +1,6 @@
 
 // import React from 'react';
-// import AdminDashboard from './AdminDashboard'
+// import AdminDashboard from './Admin/AdminDashboard';
 // const App: React.FC = () => {
 //   return (
 //     <div className="App">
@@ -214,71 +214,12 @@
 
 // export default App;
 
-import React, { useState } from 'react';
-import Sidebar from './Users/SideBar';
-import Routes from './Users/UserDashboard';
-import LoginForm from './Users/loginform';
-import SignUpForm from './Users/signup';
-import { Route, Link } from 'wouter';
-
-const App: React.FC = () => {
-  const [activeItem, setActiveItem] = useState('register');
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const handleItemClick = (item: string) => {
-    setActiveItem(item);
-  };
-
-  const handleLogin = () => {
-    setLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setLoggedIn(false);
-  };
-
-  return (
-    <div>
-      {loggedIn ? (
-        <>
-          <Sidebar activeItem={activeItem} onItemClick={handleItemClick} />
-          <div className="main-content">
-            <Routes />
-          </div>
-        </>
-      ) : (
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/signup">Sign up</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Route path="/signup" component={SignUpForm} />
-          <Route path="/login">
-            <LoginForm onLogin={handleLogin} />
-          </Route>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default App;
-
-
-
 // import React, { useState } from 'react';
 // import Sidebar from './Users/SideBar';
 // import Routes from './Users/UserDashboard';
 // import LoginForm from './Users/loginform';
 // import SignUpForm from './Users/signup';
-// import { Switch, Route, Link } from 'wouter';
+// import { Route, Link } from 'wouter';
 
 // const App: React.FC = () => {
 //   const [activeItem, setActiveItem] = useState('register');
@@ -298,28 +239,262 @@ export default App;
 
 //   return (
 //     <div>
-//       <Switch>
-//         <Route path="/" component={SignUpForm} />
-//         <Route path="/login">
-//           <LoginForm onLogin={handleLogin} />
-//         </Route>
-//         <Route path="/dashboard">
-//           {loggedIn ? (
-//             <>
-//               <Sidebar activeItem={activeItem} onItemClick={handleItemClick} />
-//               <div className="main-content">
-//                 <Routes />
-//               </div>
-//             </>
-//           ) : (
+//       {loggedIn ? (
+//         <>
+//           <Sidebar activeItem={activeItem} onItemClick={handleItemClick} />
+//           <div className="main-content">
+//             <Routes />
+//           </div>
+//         </>
+//       ) : (
+//         <div>
+//           <nav>
+//             <ul>
+//               <li>
+//                 <Link to="/signup">Sign up</Link>
+//               </li>
+//               <li>
+//                 <Link to="/login">Login</Link>
+//               </li>
+//             </ul>
+//           </nav>
+
+//           <Route path="/signup" component={SignUpForm} />
+//           <Route path="/login">
 //             <LoginForm onLogin={handleLogin} />
-//           )}
-//         </Route>
-//       </Switch>
+//           </Route>
+//         </div>
+//       )}
 //     </div>
 //   );
 // };
 
 // export default App;
 
+
+// import React from 'react';
+// import Questionnaire from './Users/Preference';
+// // import './components/preference.css'
+
+// const App: React.FC = () => {
+//   const handleQuestionnaireFinished = (answers: string[]) => {
+//     console.log('Questionnaire finished! Answers:', answers);
+//   };
+
+//   return (
+//     <div>
+     
+//       <Questionnaire onFinished={handleQuestionnaireFinished} />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+// import React, { useState } from 'react';
+// import Sidebar from './Users/SideBar';
+// import Routes from './Users/UserDashboard';
+// import LoginForm from './Users/loginform';
+// import SignUpForm from './Users/signup';
+// import { Route, Link } from 'wouter';
+// import Questionnaire from './Users/Preference';
+
+// const App: React.FC = () => {
+//   const [activeItem, setActiveItem] = useState('register');
+//   const [loggedIn, setLoggedIn] = useState(false);
+//   const [questionnaireCompleted, setQuestionnaireCompleted] = useState(false);
+
+//   const handleItemClick = (item: string) => {
+//     setActiveItem(item);
+//   };
+
+//   const handleLogin = () => {
+//     setLoggedIn(true);
+//   };
+
+//   const handleLogout = () => {
+//     setLoggedIn(false);
+//   };
+
+//   const handleQuestionnaireFinished = (answers: string[]) => {
+//     console.log('Questionnaire finished! Answers:', answers);
+//     setQuestionnaireCompleted(true);
+//   };
+
+//   return (
+//     <div>
+//       {!loggedIn ? (
+//         <div>
+//           <nav>
+//             <ul>
+//               <li>
+//                 <Link to="/signup">Sign up</Link>
+//               </li>
+//               <li>
+//                 <Link to="/login">Login</Link>
+//               </li>
+//             </ul>
+//           </nav>
+
+//           <Route path="/signup" component={SignUpForm} />
+//           <Route path="/login">
+//             <LoginForm onLogin={handleLogin} />
+//           </Route>
+//         </div>
+//       ) : questionnaireCompleted ? (
+//         <>
+//           <Sidebar activeItem={activeItem} onItemClick={handleItemClick} />
+//           <div className="main-content">
+//             <Routes />
+//           </div>
+//         </>
+//       ) : (
+//         <Questionnaire onFinished={handleQuestionnaireFinished} />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// import React from 'react';
+// import StartingPage from './StartingPage'
+// const App: React.FC = () => {
+//   return (
+//     <div className="App">
+//       <StartingPage/>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+// import React from 'react';
+// import { Link, Route, Switch } from 'wouter';
+// // import EventCalendar from './Users/EventCalendar';
+// // import UserDashboard from './Users/UserDashboard';
+// import StartingPage from './StartingPage';
+// import AdminDashboard from './Admin/AdminDashboard';
+// import AddEventForm from './Admin/AddEventsForm';
+// import EventDetailsTable from './Admin/ManageEventsScreen';
+// import UserDetailsTable from './Admin/ManageUserScreen';
+// // import PopularEvents from './Users/popularevents';
+// // import eventlist from './Users/eventlist';
+// import ImportEventData from'./Admin/UploadExcel';
+
+
+// const App = () => {
+//   return (
+//     <Switch>
+//       <Route path="/" component={StartingPage} /> 
+//       {/* <Route path="/user-login" component={UserDashboard} />
+//       <Route path="/event-calendar" component={EventCalendar} /> */}
+//       <Route path="/admin-login" component={AdminDashboard} />
+//       <Route path="/manage-events" component={EventDetailsTable}/>
+//       <Route path="/manage-users" component={UserDetailsTable} />
+//       <Route path="/add-event" component={AddEventForm} />
+//       {/* <Route path="/popular-events" component={PopularEvents} />
+//       <Route path="/userevent-list" component={eventlist} /> */}
+//       <Route path="/upload-excel" component={ImportEventData} />
+//     </Switch>
+//   );
+// };
+
+// export default App;
+
+
+
+import React, { useState } from 'react';
+import { Link, Route, Switch } from 'wouter';
+import Sidebar from './Users/SideBar';
+import Routes from './Users/UserDashboard';
+import LoginForm from './Users/loginform';
+import SignUpForm from './Users/signup';
+import Questionnaire from './Users/Preference';
+import StartingPage from './StartingPage';
+import AdminDashboard from './Admin/AdminDashboard';
+import AddEventForm from './Admin/AddEventsForm';
+import EventDetailsTable from './Admin/ManageEventsScreen';
+import UserDetailsTable from './Admin/ManageUserScreen';
+import ImportEventData from './Admin/UploadExcel';
+
+const App: React.FC = () => {
+  const [activeItem, setActiveItem] = useState('register');
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [questionnaireCompleted, setQuestionnaireCompleted] = useState(false);
+
+  const handleItemClick = (item: string) => {
+    setActiveItem(item);
+  };
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  const handleQuestionnaireFinished = (answers: string[]) => {
+    console.log('Questionnaire finished! Answers:', answers);
+    setQuestionnaireCompleted(true);
+  };
+
+  return (
+    <div>
+      <Switch>
+        <Route path="/" component={StartingPage} />
+
+        <Route path="/admin-login" component={AdminDashboard} />
+        <Route path="/manage-events" component={EventDetailsTable} />
+        <Route path="/manage-users" component={UserDetailsTable} />
+        <Route path="/add-event" component={AddEventForm} />
+        <Route path="/upload-excel" component={ImportEventData} />
+
+        <Route path="/user">
+          <UserApp />
+        </Route>
+
+        <Route>
+          {!loggedIn ? (
+            <div>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/signup">Sign up</Link>
+                  </li>
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li>
+                </ul>
+              </nav>
+
+              <Route path="/signup" component={SignUpForm} />
+              <Route path="/login">
+                <LoginForm onLogin={handleLogin} />
+              </Route>
+            </div>
+          ) : questionnaireCompleted ? (
+            <>
+              <Sidebar activeItem={activeItem} onItemClick={handleItemClick} />
+              <div className="main-content">
+                <Routes />
+              </div>
+            </>
+          ) : (
+            <Questionnaire onFinished={handleQuestionnaireFinished} />
+          )}
+        </Route>
+      </Switch>
+    </div>
+  );
+};
+
+const UserApp = () => {
+  // Define your UserApp component logic here
+  return <div>User App</div>;
+};
+
+export default App;
 

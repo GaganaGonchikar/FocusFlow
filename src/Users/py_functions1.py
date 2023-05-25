@@ -182,3 +182,10 @@ def get_event_details(engine, eventId):
         return None
     event = df.to_dict(orient='records')[0]
     return event
+
+
+def submit_questionnaire(engine, ntid, interests, events, days):
+    query = f"INSERT INTO question (NTID, interests, events, days) VALUES ('{ntid}', '{interests}', '{events}', '{days}')"
+    print(query)
+    engine.execute(query)
+    engine.commit()

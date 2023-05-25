@@ -5,8 +5,7 @@ import { Calendar, momentLocalizer, DateLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./EventCalendar.css";
-// import Header from 'components/Header';
-
+// import Header from '../Header';
 
  
 interface EventDetails {
@@ -78,14 +77,13 @@ class EventCalendar extends React.Component<
         });
     }
   };
-  
-  
+ 
+ 
   render() {
     const { events, selectedEvent } = this.state;
 
     return (
-        <div className="EventCalendar-container">
-        {/* <h2>EVENT CALENDAR</h2> */}
+      // <div><Header title="EVENT CALENDAR" />
       <div className="new">
       <div className="event-calendar">
         <Calendar
@@ -125,9 +123,10 @@ class EventCalendar extends React.Component<
         )}
       </div>
       </div>
-      </div>
+      // </div>
     );
   }
 }
 
 export default EventCalendar;
+

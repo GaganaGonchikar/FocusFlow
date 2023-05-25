@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { DataGrid, Column, Editing, Paging } from 'devextreme-react/data-grid';
+import { DataGrid, Column, Editing, Paging, FilterRow, HeaderFilter, SearchPanel } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
-import './ManageUserScreen.css';
+import './Table.css';
 // import focusFlow from "./focusFlow.png";
 // import boschlogo from "./boschlogo.png";
 
@@ -24,7 +24,7 @@ const UserDetailsTable = () => {
   const [editingEnabled, setEditingEnabled] = useState(false);
 
   useEffect(() => {
-    axios.get<User[]>('http://127.0.0.1:8000/user-list/').then(response => {
+    axios.get<User[]>('http://127.0.0.1:8000/user-data/').then(response => {
       setUserDetails(response.data);
     });
   }, []);
@@ -84,14 +84,11 @@ const UserDetailsTable = () => {
     }
   };
 
+  
   return (
+    // <div><Header title="MANAGE USERS" />
+    // <Navigation /> 
     <div className="container">
-      <div className="logo-container">
-      {/* <img src={boschlogo} alt="Bosch logo" className="logo" /> */}
-      {/* <h2 className="title1">MANAGE USERS</h2> */}
-      {/* <img src={focusFlow} alt="Focus Flow logo" className="logo" /> */}
-      </div>
-
       <div className="search-form">
         <label htmlFor="search-input">Search:</label>
         <input
@@ -131,6 +128,9 @@ const UserDetailsTable = () => {
           useIcons={true}
           />
           <Paging enabled={true} pageSize={10} />
+          <FilterRow visible={true} applyFilter="auto" />
+          <HeaderFilter visible={true} />
+          <SearchPanel visible={true} width={240} placeholder="Search..." />
           <Column dataField="NTID" caption="NTID" width={120} />
           <Column dataField="first_name" caption="First Name" width={150} />
           <Column dataField="last_name" caption="Last Name" width={150} />
@@ -140,11 +140,11 @@ const UserDetailsTable = () => {
           <Column
           dataField="approved"
           caption="Approved"
-          width={100}
           dataType="boolean"
        />
     </DataGrid>
   </div>
+  // </div>
 );
 };
           
