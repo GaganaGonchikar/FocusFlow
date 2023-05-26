@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AddEventsForm.css';
+// import Header from './../Header';
 
 type EventDetails = {
   event_id: string;
@@ -48,6 +49,7 @@ const AddEventForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+      {/* <Header title="ADD EVENTS" /> */}
         <label htmlFor="event_id">Event ID:</label>
         <input type="text" id="event_id" name="event_id" value={eventDetails.event_id} onChange={handleInputChange} readOnly />
       </div>

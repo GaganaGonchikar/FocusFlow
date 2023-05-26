@@ -1611,3 +1611,57 @@ pip install python-multipart
 2023-05-25 10:59:30,316 [INFO] User data fetched successfully
 2023-05-25 10:59:30,396 [INFO] User data fetched successfully
 2023-05-25 10:59:49,252 [INFO] Logged in successfully!
+2023-05-25 12:08:26,883 [ERROR] Execution failed on sql 'SELECT * FROM signups': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-25 12:08:26,883 [ERROR] Execution failed on sql 'SELECT * FROM signups': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-25 12:08:26,901 [INFO] User data fetched successfully
+2023-05-25 12:08:33,120 [INFO] Event data fetched successfully
+2023-05-25 12:08:33,196 [INFO] Event data fetched successfully
+2023-05-25 12:08:37,645 [INFO] Event data fetched successfully
+2023-05-25 12:08:37,746 [INFO] Event data fetched successfully
+2023-05-25 12:09:23,094 [INFO] Event data fetched successfully
+2023-05-25 12:09:23,264 [INFO] Event data fetched successfully
+2023-05-25 12:09:38,326 [INFO] Logged in successfully!
+2023-05-25 12:10:12,776 [INFO] Logged in successfully!
+2023-05-25 12:10:56,660 [INFO] Logged in successfully!
+2023-05-25 12:12:06,811 [INFO] Logged in successfully!
+2023-05-26 10:05:08,099 [INFO] Logged in successfully!
+2023-05-26 10:15:38,678 [INFO] Logged in successfully!
+2023-05-26 16:17:01,350 [INFO] Logged in successfully!
+2023-05-26 16:17:14,426 [INFO] Popular events fetched successfully
+2023-05-26 16:17:14,699 [INFO] Popular events fetched successfully
+2023-05-26 16:18:36,154 [INFO] Event data fetched successfully
+2023-05-26 16:18:36,223 [INFO] Event data fetched successfully
+2023-05-26 16:21:30,256 [INFO] Event data fetched successfully
+2023-05-26 16:21:30,324 [INFO] Event data fetched successfully
+2023-05-26 16:21:41,357 [INFO] Event data fetched successfully
+2023-05-26 16:21:41,421 [INFO] Event data fetched successfully
+2023-05-26 16:40:19,333 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:40:34,457 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:41:31,168 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:41:31,170 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:44:10,276 [ERROR] Execution failed on sql 'SELECT * FROM signups': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:44:10,276 [ERROR] Execution failed on sql 'SELECT * FROM signups': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:45:31,157 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:45:31,157 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:45:46,284 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:45:46,286 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:46:33,668 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:46:33,668 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:46:57,186 [ERROR] Execution failed on sql 'SELECT * FROM signups': ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW); [08S01] [Microsoft][ODBC Driver 17 for SQL Server]The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of ConnectRetryCount to increase the number of recovery attempts. (0)')
+2023-05-26 16:47:08,971 [ERROR] Execution failed on sql 'SELECT * FROM Events;': ('HY000', '[HY000] [Microsoft][ODBC Driver 17 for SQL Server]Connection is busy with results for another command (0) (SQLExecDirectW)')
+2023-05-26 16:47:08,977 [INFO] User data fetched successfully
+2023-05-26 16:47:09,030 [INFO] Event data fetched successfully
+2023-05-26 16:47:24,033 [INFO] User data fetched successfully
+2023-05-26 16:47:24,098 [INFO] User data fetched successfully
+2023-05-26 16:47:44,794 [INFO] Logged in successfully!
+2023-05-26 16:48:01,175 [INFO] Event data fetched successfully
+2023-05-26 16:48:01,230 [INFO] Event data fetched successfully
+2023-05-26 16:48:04,390 [INFO] Popular events fetched successfully
+2023-05-26 16:48:04,454 [INFO] Popular events fetched successfully
+2023-05-26 16:50:56,856 [INFO] Logged in successfully!
+2023-05-26 16:51:06,922 [INFO] Event data fetched successfully
+2023-05-26 16:51:06,978 [INFO] Event data fetched successfully
+2023-05-26 16:51:41,923 [INFO] Event data fetched successfully
+2023-05-26 16:51:41,977 [INFO] Event data fetched successfully
+2023-05-26 17:12:55,427 [INFO] Event data fetched successfully
+2023-05-26 17:12:56,048 [INFO] Event data fetched successfully

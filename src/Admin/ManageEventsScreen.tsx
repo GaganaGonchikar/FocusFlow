@@ -4,6 +4,7 @@ import { DataGrid, Column, Editing, Paging, FilterRow, HeaderFilter, SearchPanel
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import './Table.css';
+import Header from './../Header';
 // import focusFlow from "./focuflow.svg";
 // import boschlogo from "./boschlogo.png";
 
@@ -97,7 +98,7 @@ const EventDetailsTable = () => {
   
   return (
   <div>
-  {/* <Header title="MANAGE EVENTS" /> */}
+  <Header title="MANAGE EVENTS" />
   {/* <Navigation /> */}
   <div className="container">
   <div className="search-form">

@@ -1,0 +1,19 @@
+.headerfile {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border: solid 2px black;
+  }
+  
+  .engagelogo {
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .headerheading {
+    margin-left: 450px;
+    color: black;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+  }

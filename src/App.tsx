@@ -498,3 +498,31 @@ const UserApp = () => {
 
 export default App;
 
+
+
+
+// import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './Users/Feedback.css';
+// import { BrowserRouter, Routes, Route, Form } from "react-router-dom";
+// import React from 'react';
+// import StickyHeader from './Users/headers';
+// import FeedbackForm from './Users/Feedback';
+// // import Submissions from './Users/FeedbackSubmission';
+
+// function App(): JSX.Element {
+//   return (
+//     <div className="App">
+//       <StickyHeader />
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<FeedbackForm />}/>
+//           {/* <Route path="submissions" element={<Submissions />} />
+//           <Route path="submission/:id" element={<Submissions />} /> */}
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
+// export default App;

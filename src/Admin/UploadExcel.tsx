@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './UploadForm.css';
-// import Header from './../Header';
+import Header from './../Header';
 // import Navigation from './navigation';
 
 
@@ -47,8 +47,8 @@ const UploadForm: React.FC = () => {
   }
 
   return (
-    // <div><Header title="UPLOAD EVENT EXCEL" />
-    // <Navigation /> 
+    <div><Header title="UPLOAD EVENT EXCEL" />
+    {/* <Navigation />  */}
     <div className="upload-form-container">
       <div className='form-wrapper5'>
       <form onSubmit={handleSubmit}>

@@ -4,6 +4,7 @@ import { DataGrid, Column, Editing, Paging, FilterRow, HeaderFilter, SearchPanel
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import './Table.css';
+import Header from './../Header';
 // import focusFlow from "./focusFlow.png";
 // import boschlogo from "./boschlogo.png";
 
@@ -86,8 +87,8 @@ const UserDetailsTable = () => {
 
   
   return (
-    // <div><Header title="MANAGE USERS" />
-    // <Navigation /> 
+    <div><Header title="MANAGE USERS" />
+     {/* <Navigation />  */}
     <div className="container">
       <div className="search-form">
         <label htmlFor="search-input">Search:</label>

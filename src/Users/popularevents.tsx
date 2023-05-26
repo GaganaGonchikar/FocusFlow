@@ -41,10 +41,10 @@ const PopularEvents: React.FC = () => {
           <thead>
             <tr>
               <th>Event ID</th>
-              <th>Event Name</th>
+              {/* <th>Event Name</th>
               <th>Date</th>
               <th>Location</th>
-              <th>Description</th>
+              <th>Description</th> */}
               <th>Registered Users</th>
             </tr>
           </thead>
@@ -52,10 +52,10 @@ const PopularEvents: React.FC = () => {
             {popularEvents.map((event) => (
               <tr key={event.event_id}>
                 <td>{event.event_id}</td>
-                <td>{event.event_name}</td>
+                {/* <td>{event.event_name}</td>
                 <td>{event.event_date}</td>
                 <td>{event.event_location}</td>
-                <td>{event.event_description}</td>
+                <td>{event.event_description}</td> */}
                 <td>{event.registered_users}</td>
               </tr>
             ))}

@@ -189,3 +189,10 @@ def submit_questionnaire(engine, ntid, interests, events, days):
     print(query)
     engine.execute(query)
     engine.commit()
+
+
+def add_feedback(engine, EventId, EventName, MobileNo, rating1, rating2, rating3, rating4):
+    query = f"INSERT INTO Feedback (EventId, EventName, MobileNo, rating1, rating2, rating3, rating4) VALUES ('{EventId}','{EventName}','{MobileNo}','{rating1}','{rating2}','{rating3}','{rating4}')"
+    print(query)
+    engine.execute(query)
+    engine.commit()

@@ -349,6 +349,17 @@ def submit_answers(NTID: str,interests: str,events: str,days: str):
     except Exception as e:
         return JSONResponse(content={"message": f"Error: {str(e)}"}, status_code=500)
 
+@app.post('/add_feedback')
+def add_feedback(EventId: str, EventName: str, MobileNo: str, rating1: str, rating2: str, rating3: str, rating4: str):
+    try:
+        py_functions1.add_feedback(cnxn, EventId, EventName, MobileNo, rating1, rating2, rating3, rating4)
+        logging.info(f'Feedback {EventId} added successfully')
+    except Exception as e:
+        logging.error(str(e))
+        raise HTTPException(status_code=404, detail="Can't add feedback in the database")
+    return {'message': 'Feedback added successfully'}
+
+
 # Run the app
 if __name__ == "__main__":
     # py_functions1.import_eventdata('EventsData.xlsx', cnxn)

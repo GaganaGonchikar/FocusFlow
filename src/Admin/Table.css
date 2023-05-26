@@ -79,7 +79,7 @@ body {
   }
   
   .dx-datagrid-header-panel {
-    background-color: #ff3333;
+    /* background-color: #ff3333; */
     color: #fff;
   }
   
@@ -178,11 +178,12 @@ body {
   
   .filter-form {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
+    font-size: 1rem;
   }
   
-  .checkbox-container {
+  /* .checkbox-container {
     display: flex;
     flex-direction: row;
   }
@@ -190,7 +191,22 @@ body {
   .checkbox-item {
     display: flex;
     align-items: center;
-    margin-right: 10px; /* Adjust spacing between checkbox items */
-  }
+    margin-right: 0px;
+  margin-left: -50px;
+  } */
 
+  .checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
   

@@ -84,7 +84,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
     { id: 'register', label: 'Register for Events', path: '/register' },
     { id: 'history', label: 'Participation History', path: '/history' },
     { id: 'upcoming', label: 'Upcoming Events', path: '/upcoming' },
-    { id: 'feedback', label: 'Feedback', path: '/feedback' },
+    // { id: 'feedback', label: 'Feedback', path: '/feedback' },
     { id: 'signout', label: 'Logout', path: '/signout' },
   ];
 

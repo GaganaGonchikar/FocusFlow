@@ -6,7 +6,7 @@ import UpcomingEvents from './UpcomingEvents';
 import UserDashboard1 from './UserDashboard1';
 import PopularEvents from './popularevents';
 import EventList from './eventlist';
-// import Feedback from './Feedback';
+// import Feedback from './FeedBackForm';
 // import Notifications from './Notifications';
 
 const Routes: React.FC = () => {
@@ -28,6 +28,9 @@ const Routes: React.FC = () => {
       </Route>
       <Route path="/notifications">
         <Notifications />
+      </Route> */}
+        {/* <Route path="/feedback">
+        <Feedback />
       </Route> */}
       <Route path="/event-calendar" component={EventCalendar} />
       <Route path="/popular-events" component={PopularEvents} />
